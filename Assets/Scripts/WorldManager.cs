@@ -8,8 +8,8 @@ public class WorldManager : MonoBehaviour
 
     private static TileType[,,] World;
     private static int Size;
-    private static int Slice = 0;
-    private static Direction Dir = Direction.North;
+    private static int Slice;
+    private static Direction Facing = Direction.North;
     public static Dictionary<TileType, TileDatum> TileTable = new Dictionary<TileType, TileDatum>();
 
     private void Awake()
@@ -20,23 +20,45 @@ public class WorldManager : MonoBehaviour
         Size = Dimensions;
 
         Camera.main.transform.position = new Vector3(Size / 2, Size / 2, -10);
+        Slice = Size / 2;
 
-        World = new TileType[Size, Size, 2];
+        World = new TileType[Size, Size, Size];
 
         for (int i = 0; i < Size; i++)
             for (int j = 0; j < Size; j++)
-                for (int k = 0; k < 2; k++)//
+                for (int k = 0; k < Size; k++)
                     World[i, j, k] = (TileType)((i + j + k) % 2 + 1);
 	}
-	
-	public static TileType GetTileType(Vector3 Position, out int Depth)
+
+    // Does this work when turned?
+    public static void Move(bool forward)
+    {
+        if (forward)
+            Slice++;
+        else
+            Slice--;
+
+        TileBehaviour.ResetAll();
+    }
+
+    public static void Turn(bool right)
+    {
+        if (right)
+            Facing = (Direction)(((int)Facing - 1 + 4) % 4);
+        else
+            Facing = (Direction)(((int)Facing + 1) % 4);
+
+        TileBehaviour.ResetAll();
+    }
+
+    public static TileType GetTileType(Vector3 Position, out int Depth)
     {
         Depth = 0;
 
         int x = -1;
         int y = (int)Position.y;
         int z = -1;
-        switch (Dir)
+        switch (Facing)
         {
             case Direction.North: // World[x, y, Slice]                
                 x = (int)Position.x;
@@ -63,7 +85,7 @@ public class WorldManager : MonoBehaviour
 
         while (type == TileType.Air)
         {
-            switch (Dir)
+            switch (Facing)
             {
                 case Direction.North:
                     z++;
@@ -97,7 +119,7 @@ public class WorldManager : MonoBehaviour
         if (x < 0 || y < 0 || x >= Size || y >= Size)
             return false;
 
-        switch (Dir)
+        switch (Facing)
         {
             case Direction.North:
                 World[x, y, Slice] = Type;
