@@ -20,7 +20,9 @@ public static class ScriptableObjectUtility
         AssetDatabase.CreateAsset(asset, assetPathAndName);
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
+
         EditorUtility.FocusProjectWindow();
+
         Selection.activeObject = asset;
     }
 }

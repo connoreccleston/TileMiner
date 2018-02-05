@@ -5,51 +5,42 @@ public class SpriteManager : MonoBehaviour
 {
     public Sprite DebugSprite;
 
-    private float lastSize = 0;
-    private Vector3 lastPos;
+    private float LastSize = 0;
+    private Vector3 LastPos;
 
-    private WorldManager wm;
-    private GameObject container;
+    private GameObject Container;
 
-    private Stack<GameObject> extraSprites = new Stack<GameObject>();
+    private Stack<GameObject> ExtraSprites = new Stack<GameObject>();
 
     private void Awake()
     {
-        wm = FindObjectOfType<WorldManager>();
-        lastPos = Camera.main.transform.position;
-        container = new GameObject("Sprite Container");
+        LastPos = Camera.main.transform.position;
+        Container = new GameObject("Sprite Container");
     }
 
     private void CreateSprite(int x, int y)
     {
         GameObject go;
-        SpriteRenderer sr;
-        if (extraSprites.Count > 0)
+        if (ExtraSprites.Count > 0)
         {
-            go = extraSprites.Pop();
-            sr = go.GetComponent<SpriteRenderer>();
+            go = ExtraSprites.Pop();
+            go.GetComponent<TileBehaviour>().ResetTile(false);
         }
         else
         {
-            go = new GameObject();
-            sr = go.AddComponent<SpriteRenderer>();
-            BoxCollider2D bc = go.AddComponent<BoxCollider2D>();
-            bc.size = new Vector2(1, 1);
-            go.transform.SetParent(container.transform, true);
+            go = new GameObject(null, typeof(TileBehaviour));
+            go.transform.SetParent(Container.transform, true);
         }
         go.transform.position = new Vector3(x, y, 0);
-        TileType type = wm.GetTileType(go);
-        sr.sprite = wm.TileTable[type].Sprite;
-        go.name = type.ToString();
     }
 
     RaycastHit2D[] hit = new RaycastHit2D[1];
 	private void Update()
 	{
-        if (Camera.main.orthographicSize != lastSize || Camera.main.transform.position != lastPos) // threshold?
+        if (Camera.main.orthographicSize != LastSize || Camera.main.transform.position != LastPos) // threshold?
         {
-            lastSize = Camera.main.orthographicSize;
-            lastPos = Camera.main.transform.position;
+            LastSize = Camera.main.orthographicSize;
+            LastPos = Camera.main.transform.position;
 
             int left = (int)(Camera.main.transform.position.x - Camera.main.orthographicSize * Camera.main.aspect) - 1;
             int right = (int)(Camera.main.transform.position.x + Camera.main.orthographicSize * Camera.main.aspect) + 2;
@@ -67,6 +58,7 @@ public class SpriteManager : MonoBehaviour
                         {
                             Destroy(hit[0].transform.gameObject);
                             // fragmentation if moving too fast, getting added multiple times?
+                            // multiple new tiles will spawn if telling them to animate
                             //extraSprites.Push(hit[0].transform.gameObject);
                             //hit[0].transform.gameObject.GetComponent<SpriteRenderer>().sprite = DebugSprite;
                         }
