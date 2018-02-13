@@ -11,8 +11,6 @@ public class TileBehaviour : MonoBehaviour
     private SpriteRenderer SR;
     private BoxCollider2D BC;
 
-    private const int ShadingValues = 4;
-
     private void Start()
 	{
         SR = gameObject.AddComponent<SpriteRenderer>();
@@ -40,9 +38,8 @@ public class TileBehaviour : MonoBehaviour
 
     private void ChangeSprite(int depth, bool animate)
     {
-        int shadingStep = Mathf.RoundToInt(256f / (ShadingValues - 1));
-        depth = 255 - depth * shadingStep;
-        byte value = depth >= 0 ? (byte)depth : (byte)0;
+        int shade = (16 - depth * 2) * (16 - depth * 2) - 1;
+        byte value = depth < 16 / 2 ? (byte)shade : (byte)0;
         NewColor = new Color32(value, value, value, 255);
 
         if (animate)

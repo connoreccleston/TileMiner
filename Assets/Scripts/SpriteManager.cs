@@ -5,6 +5,8 @@ public class SpriteManager : MonoBehaviour
 {
     private float LastSize = 0;
     private Vector3Int LastPos;
+    private Queue<GameObject> Recycle = new Queue<GameObject>();
+    private HashSet<GameObject> Seen = new HashSet<GameObject>();
 
     private GameObject Container;
 
@@ -16,9 +18,19 @@ public class SpriteManager : MonoBehaviour
 
     private void CreateSprite(int x, int y)
     {
-        GameObject go = new GameObject(null, typeof(TileBehaviour));
+        GameObject go;
+        bool reuse = Recycle.Count > 0;
+        if (reuse)
+            go = Recycle.Dequeue();
+        else
+            go = new GameObject(null, typeof(TileBehaviour));
         go.transform.SetParent(Container.transform, true);
         go.transform.position = new Vector3(x, y, 0);
+        if (reuse)
+        {
+            Seen.Remove(go);
+            go.GetComponent<TileBehaviour>().ResetTile(false);
+        }
     }
 
     RaycastHit2D[] hit = new RaycastHit2D[1];
@@ -40,7 +52,13 @@ public class SpriteManager : MonoBehaviour
             toDestroy.ExceptWith(Physics2D.OverlapAreaAll(new Vector2(left, top), new Vector2(right, bottom)));
 
             foreach (var tile in toDestroy)
-                Destroy(tile.gameObject);
+            {
+                if (!Seen.Contains(tile.gameObject))
+                {
+                    Recycle.Enqueue(tile.gameObject);
+                    Seen.Add(tile.gameObject);
+                }
+            }
 
             for (int x = left; x <= right; x++)
                 for (int y = bottom; y <= top; y++)

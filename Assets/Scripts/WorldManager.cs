@@ -137,12 +137,4 @@ public class WorldManager : MonoBehaviour
 
         return true;
     }
-
-    private enum Direction
-    {
-        North,
-        East,
-        South,
-        West
-    }
 }
