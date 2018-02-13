@@ -137,4 +137,31 @@ public class WorldManager : MonoBehaviour
 
         return true;
     }
+
+    //public static Vector3 WorldToModel(Direction direction, Vector3 center, Vector3 position)
+    //{
+
+    //}
+
+    //public static Vector3 ModelToWorld(Direction direction, Vector3 center, Vector3 position)
+    //{
+    //    Quaternion angle = new Quaternion();
+    //    switch (direction)
+    //    {
+    //        case Direction.North:
+    //            angle.eulerAngles = new Vector3(0, 0, 0);
+    //            break;
+    //        case Direction.East:
+    //            angle.eulerAngles = new Vector3(0, 90, 0);
+    //            break;
+    //        case Direction.South:
+    //            angle.eulerAngles = new Vector3(0, 180, 0);
+    //            break;
+    //        case Direction.West:
+    //            angle.eulerAngles = new Vector3(0, 270, 0);
+    //            break;
+    //    }
+
+    //    return angle * (position - center) + center;
+    //}
 }
