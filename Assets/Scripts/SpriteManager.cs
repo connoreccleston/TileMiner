@@ -8,8 +8,6 @@ public class SpriteManager : MonoBehaviour
     private Queue<GameObject> Recycle = new Queue<GameObject>();
     private HashSet<GameObject> Seen = new HashSet<GameObject>();
 
-    public static HashSet<GameObject> AllTiles = new HashSet<GameObject>();
-
     private GameObject Container;
 
     private void Awake()
@@ -18,24 +16,21 @@ public class SpriteManager : MonoBehaviour
         Container = new GameObject("Sprite Container");
     }
 
-    private void CreateSprite(int x, int y) // add z and clean up
+    private void CreateSprite(int x, int y)
     {
         GameObject go;
-        if (Recycle.Count > 0)
-        {
+        bool reuse = Recycle.Count > 0;
+        if (reuse)
             go = Recycle.Dequeue();
+        else
+            go = new GameObject(null, typeof(TileBehaviour));
+        go.transform.SetParent(Container.transform, true);
+        go.transform.position = new Vector3(x, y, 0);
+        if (reuse)
+        {
             Seen.Remove(go);
-            go.transform.rotation = Camera.main.transform.rotation;//
-            go.transform.position = new Vector3(x, y, 0);
             go.GetComponent<TileBehaviour>().ResetTile(false);
         }
-        else
-        {
-            go = new GameObject(null, typeof(TileBehaviour));
-            AllTiles.Add(go);
-            go.transform.position = new Vector3(x, y, 0);
-        }
-        go.transform.SetParent(Container.transform, true);
     }
 
     RaycastHit2D[] hit = new RaycastHit2D[1];
@@ -51,22 +46,17 @@ public class SpriteManager : MonoBehaviour
             int right = (int)(Camera.main.transform.position.x + Camera.main.orthographicSize * Camera.main.aspect) + 2;
             int bottom = (int)(Camera.main.transform.position.y - Camera.main.orthographicSize) - 1;
             int top = (int)(Camera.main.transform.position.y + Camera.main.orthographicSize) + 2;
+            
+            var area = Physics2D.OverlapAreaAll(new Vector2(left - 25, top + 25), new Vector2(right + 25, bottom - 25));
+            HashSet <Collider2D> toDestroy = new HashSet<Collider2D>(area);
+            toDestroy.ExceptWith(Physics2D.OverlapAreaAll(new Vector2(left, top), new Vector2(right, bottom)));
 
-            //var area = Physics2D.OverlapAreaAll(new Vector2(left - 25, top + 25), new Vector2(right + 25, bottom - 25));
-            //HashSet<Collider2D> toDestroy = new HashSet<Collider2D>(area);
-            //toDestroy.ExceptWith(Physics2D.OverlapAreaAll(new Vector2(left, top), new Vector2(right, bottom)));
-
-            Collider2D[] inBounds = Physics2D.OverlapAreaAll(new Vector2(left, top), new Vector2(right, bottom));
-            HashSet<GameObject> objInBounds = new HashSet<GameObject>();
-            foreach (var item in inBounds)
-                objInBounds.Add(item.gameObject);
-
-            foreach (GameObject tile in AllTiles)
+            foreach (var tile in toDestroy)
             {
-                if (!Seen.Contains(tile) && !objInBounds.Contains(tile))
+                if (!Seen.Contains(tile.gameObject))
                 {
-                    Recycle.Enqueue(tile);
-                    Seen.Add(tile);
+                    Recycle.Enqueue(tile.gameObject);
+                    Seen.Add(tile.gameObject);
                 }
             }
 

@@ -14,7 +14,7 @@ public class TileBehaviour : MonoBehaviour
     private void Start()
 	{
         SR = gameObject.AddComponent<SpriteRenderer>();
-        BC = gameObject.AddComponent<BoxCollider2D>();
+        BC= gameObject.AddComponent<BoxCollider2D>();
         BC.size = new Vector2(1, 1);
         ResetTile(false);
     }
@@ -22,12 +22,12 @@ public class TileBehaviour : MonoBehaviour
     public void ResetTile(bool animate)
     {
         int depth;
-        Data = World3D.TileTable[World3D.GetTileType(transform.position, out depth)];
+        Data = WorldManager.TileTable[WorldManager.GetTileType(transform.position, out depth)];
 
         if (depth != 0)
         {
             Sprite temp = Data.Sprite;
-            Data = World3D.TileTable[TileType.Air];
+            Data = WorldManager.TileTable[TileType.Air];
             Data.Sprite = temp;
         }
 
@@ -117,7 +117,7 @@ public class TileBehaviour : MonoBehaviour
 
     private void Break()
     {
-        World3D.SetTileType(gameObject, TileType.Air);
+        WorldManager.SetTileType(gameObject, TileType.Air);
         ResetTile(true);
     }
 }
