@@ -19,18 +19,17 @@ public class SpriteManager : MonoBehaviour
     private void CreateSprite(int x, int y)
     {
         GameObject go;
-        bool reuse = Recycle.Count > 0;
-        if (reuse)
+        if (Recycle.Count > 0)
+        {
             go = Recycle.Dequeue();
+            Seen.Remove(go);
+        }
         else
+        {
             go = new GameObject(null, typeof(TileBehaviour));
+        }
         go.transform.SetParent(Container.transform, true);
         go.transform.position = new Vector3(x, y, 0);
-        if (reuse)
-        {
-            Seen.Remove(go);
-            go.GetComponent<TileBehaviour>().ResetTile(false);
-        }
     }
 
     RaycastHit2D[] hit = new RaycastHit2D[1];

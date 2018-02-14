@@ -8,11 +8,14 @@ public class TileBehaviour : MonoBehaviour
     private bool Animating = false;
     private Color NewColor;
 
+    private Vector3 LastPosition;
+
     private SpriteRenderer SR;
     private BoxCollider2D BC;
 
     private void Start()
 	{
+        LastPosition = transform.position;
         SR = gameObject.AddComponent<SpriteRenderer>();
         BC= gameObject.AddComponent<BoxCollider2D>();
         BC.size = new Vector2(1, 1);
@@ -55,19 +58,23 @@ public class TileBehaviour : MonoBehaviour
 
     public static void ResetAll()
     {
-        float width = 4 * Camera.main.orthographicSize * Camera.main.aspect;
-        float left = Camera.main.transform.position.x - Camera.main.orthographicSize * Camera.main.aspect - width;
-        float center = Camera.main.transform.position.y;
-        float angle = Mathf.Atan(1 / Camera.main.aspect) * 180 / Mathf.PI;
+        TileBehaviour[] allTiles = FindObjectsOfType<TileBehaviour>();
+        float[] delays = new float[allTiles.Length];
 
-        var hits = Physics2D.BoxCastAll(new Vector2(left, center), new Vector2(width, 1), angle, Vector2.right);
+        float left = Camera.main.transform.position.x - Camera.main.orthographicSize * Camera.main.aspect;
+        float top = Camera.main.transform.position.y + Camera.main.orthographicSize;
 
-        float delay = 0;
-        foreach (var hit in hits)
+        float max = 0;
+        for (int i = 0; i < allTiles.Length; i++)
         {
-            hit.transform.GetComponent<TileBehaviour>().Invoke("ResetTile", delay);
-            delay += .005f; // should move faster for larger views
+            delays[i] = Mathf.Abs(left - allTiles[i].transform.position.x) / Camera.main.aspect
+                      + Mathf.Abs(top - allTiles[i].transform.position.y);
+            if (delays[i] > max)
+                max = delays[i];
         }
+
+        for (int i = 0; i < allTiles.Length; i++)
+            allTiles[i].Invoke("ResetTile", delays[i] / max * 2);
     }
 
     private void ResetTile()
@@ -97,6 +104,12 @@ public class TileBehaviour : MonoBehaviour
                 BC = gameObject.AddComponent<BoxCollider2D>();
                 BC.size = new Vector2(1, 1);
             }
+        }
+
+        if (LastPosition != transform.position)
+        {
+            ResetTile(false);
+            LastPosition = transform.position;
         }
     }
 
