@@ -8,8 +8,8 @@ public class WorldManager : MonoBehaviour
 
     private static TileType[,,] World;
     private static int Size;
-    private static int Slice;
-    private static Direction Facing = Direction.North;
+    //private static int Slice;
+    //private static Direction Facing = Direction.North;
     public static Dictionary<TileType, TileDatum> TileTable = new Dictionary<TileType, TileDatum>();
 
     private void Awake()
@@ -19,8 +19,7 @@ public class WorldManager : MonoBehaviour
 
         Size = Dimensions;
 
-        Camera.main.transform.position = new Vector3(Size / 2, Size / 2, -10);
-        Slice = Size / 2;
+        //Slice = Size / 2;
 
         World = new TileType[Size, Size, Size];
 
@@ -30,26 +29,25 @@ public class WorldManager : MonoBehaviour
                     World[i, j, k] = (TileType)((i + j + k) % 2 + 1);
 	}
 
-    // Does this work when turned?
-    public static void Move(bool forward)
-    {
-        if (forward)
-            Slice++;
-        else
-            Slice--;
+    //public static void Move(bool forward)
+    //{
+    //    if (forward)
+    //        Slice++;
+    //    else
+    //        Slice--;
 
-        TileBehaviour.ResetAll();
-    }
+    //    TileBehaviour.ResetAll();
+    //}
 
-    public static void Turn(bool right)
-    {
-        if (right)
-            Facing = (Direction)(((int)Facing - 1 + 4) % 4);
-        else
-            Facing = (Direction)(((int)Facing + 1) % 4);
+    //public static void Turn(bool right)
+    //{
+    //    if (right)
+    //        Facing = (Direction)(((int)Facing - 1 + 4) % 4);
+    //    else
+    //        Facing = (Direction)(((int)Facing + 1) % 4);
 
-        TileBehaviour.ResetAll();
-    }
+    //    TileBehaviour.ResetAll();
+    //}
 
     public static TileType GetTileType(Vector3 Position, out int Depth)
     {
@@ -58,22 +56,22 @@ public class WorldManager : MonoBehaviour
         int x = -1;
         int y = (int)Position.y;
         int z = -1;
-        switch (Facing)
+        switch (PlayerController.Facing)
         {
             case Direction.North: // World[x, y, Slice]                
                 x = (int)Position.x;
-                z = Slice;
+                z = (int)PlayerController.Position.z;
                 break;
             case Direction.East: // World[-Slice, y, x]
-                x = -Slice;
+                x = -(int)PlayerController.Position.z;
                 z = (int)Position.x;
                 break;
             case Direction.South: // World[-x, y, -Slice]
                 x = (int)-Position.x;
-                z = -Slice;
+                z = -(int)PlayerController.Position.z;
                 break;
             case Direction.West: // World[Slice, y, -x]
-                x = Slice;
+                x = (int)PlayerController.Position.z;
                 z = (int)-Position.x;
                 break;
         }
@@ -85,7 +83,7 @@ public class WorldManager : MonoBehaviour
 
         while (type == TileType.Air)
         {
-            switch (Facing)
+            switch (PlayerController.Facing)
             {
                 case Direction.North:
                     z++;
@@ -115,23 +113,24 @@ public class WorldManager : MonoBehaviour
     {
         int x = (int)GO.transform.position.x;
         int y = (int)GO.transform.position.y;
+        int z = (int)PlayerController.Position.z;
 
-        if (x < 0 || y < 0 || x >= Size || y >= Size)
+        if (x < 0 || y < 0 || z < 0 || x >= Size || y >= Size || z >= Size)
             return false;
 
-        switch (Facing)
+        switch (PlayerController.Facing)
         {
             case Direction.North:
-                World[x, y, Slice] = Type;
+                World[x, y, z] = Type;
                 break;
             case Direction.East:
-                World[-Slice, y, x] = Type;
+                World[-z, y, x] = Type;
                 break;
             case Direction.South:
-                World[-x, y, -Slice] = Type;
+                World[-x, y, -z] = Type;
                 break;
             case Direction.West:
-                World[Slice, y, -x] = Type;
+                World[z, y, -x] = Type;
                 break;
         }
 

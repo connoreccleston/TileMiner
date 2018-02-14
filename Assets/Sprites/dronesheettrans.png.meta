@@ -1,0 +1,4182 @@
+fileFormatVersion: 2
+guid: bc72792b83fa7e94a82def2d14267a18
+timeCreated: 1518605716
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: dronesheettrans_0
+    21300002: dronesheettrans_1
+    21300004: dronesheettrans_2
+    21300006: dronesheettrans_3
+    21300008: dronesheettrans_4
+    21300010: dronesheettrans_5
+    21300012: dronesheettrans_6
+    21300014: dronesheettrans_7
+    21300016: dronesheettrans_8
+    21300018: dronesheettrans_9
+    21300020: dronesheettrans_10
+    21300022: dronesheettrans_11
+    21300024: dronesheettrans_12
+    21300026: dronesheettrans_13
+    21300028: dronesheettrans_14
+    21300030: dronesheettrans_15
+    21300032: dronesheettrans_16
+    21300034: dronesheettrans_17
+    21300036: dronesheettrans_18
+    21300038: dronesheettrans_19
+    21300040: dronesheettrans_20
+    21300042: dronesheettrans_21
+    21300044: dronesheettrans_22
+    21300046: dronesheettrans_23
+    21300048: dronesheettrans_24
+    21300050: dronesheettrans_25
+    21300052: dronesheettrans_26
+    21300054: dronesheettrans_27
+    21300056: dronesheettrans_28
+    21300058: dronesheettrans_29
+    21300060: dronesheettrans_30
+    21300062: dronesheettrans_31
+    21300064: dronesheettrans_32
+    21300066: dronesheettrans_33
+    21300068: dronesheettrans_34
+    21300070: dronesheettrans_35
+    21300072: dronesheettrans_36
+    21300074: dronesheettrans_37
+    21300076: dronesheettrans_38
+    21300078: dronesheettrans_39
+    21300080: dronesheettrans_40
+    21300082: dronesheettrans_41
+    21300084: dronesheettrans_42
+    21300086: dronesheettrans_43
+    21300088: dronesheettrans_44
+    21300090: dronesheettrans_45
+    21300092: dronesheettrans_46
+    21300094: dronesheettrans_47
+    21300096: dronesheettrans_48
+    21300098: dronesheettrans_49
+    21300100: dronesheettrans_50
+    21300102: dronesheettrans_51
+    21300104: dronesheettrans_52
+    21300106: dronesheettrans_53
+    21300108: dronesheettrans_54
+    21300110: dronesheettrans_55
+    21300112: dronesheettrans_56
+    21300114: dronesheettrans_57
+    21300116: dronesheettrans_58
+    21300118: dronesheettrans_59
+    21300120: dronesheettrans_60
+    21300122: dronesheettrans_61
+    21300124: dronesheettrans_62
+    21300126: dronesheettrans_63
+    21300128: dronesheettrans_64
+    21300130: dronesheettrans_65
+    21300132: dronesheettrans_66
+    21300134: dronesheettrans_67
+    21300136: dronesheettrans_68
+    21300138: dronesheettrans_69
+    21300140: dronesheettrans_70
+    21300142: dronesheettrans_71
+    21300144: dronesheettrans_72
+    21300146: dronesheettrans_73
+    21300148: dronesheettrans_74
+    21300150: dronesheettrans_75
+    21300152: dronesheettrans_76
+    21300154: dronesheettrans_77
+    21300156: dronesheettrans_78
+    21300158: dronesheettrans_79
+    21300160: dronesheettrans_80
+    21300162: dronesheettrans_81
+    21300164: dronesheettrans_82
+    21300166: dronesheettrans_83
+    21300168: dronesheettrans_84
+    21300170: dronesheettrans_85
+    21300172: dronesheettrans_86
+    21300174: dronesheettrans_87
+    21300176: dronesheettrans_88
+    21300178: dronesheettrans_89
+    21300180: dronesheettrans_90
+    21300182: dronesheettrans_91
+    21300184: dronesheettrans_92
+    21300186: dronesheettrans_93
+    21300188: dronesheettrans_94
+    21300190: dronesheettrans_95
+    21300192: dronesheettrans_96
+    21300194: dronesheettrans_97
+    21300196: dronesheettrans_98
+    21300198: dronesheettrans_99
+    21300200: dronesheettrans_100
+    21300202: dronesheettrans_101
+    21300204: dronesheettrans_102
+    21300206: dronesheettrans_103
+    21300208: dronesheettrans_104
+    21300210: dronesheettrans_105
+    21300212: dronesheettrans_106
+    21300214: dronesheettrans_107
+    21300216: dronesheettrans_108
+    21300218: dronesheettrans_109
+    21300220: dronesheettrans_110
+    21300222: dronesheettrans_111
+    21300224: dronesheettrans_112
+    21300226: dronesheettrans_113
+    21300228: dronesheettrans_114
+    21300230: dronesheettrans_115
+    21300232: dronesheettrans_116
+    21300234: dronesheettrans_117
+    21300236: dronesheettrans_118
+    21300238: dronesheettrans_119
+    21300240: dronesheettrans_120
+    21300242: dronesheettrans_121
+    21300244: dronesheettrans_122
+    21300246: dronesheettrans_123
+    21300248: dronesheettrans_124
+    21300250: dronesheettrans_125
+    21300252: dronesheettrans_126
+    21300254: dronesheettrans_127
+    21300256: dronesheettrans_128
+    21300258: dronesheettrans_129
+    21300260: dronesheettrans_130
+    21300262: dronesheettrans_131
+    21300264: dronesheettrans_132
+    21300266: dronesheettrans_133
+    21300268: dronesheettrans_134
+    21300270: dronesheettrans_135
+    21300272: dronesheettrans_136
+    21300274: dronesheettrans_137
+    21300276: dronesheettrans_138
+    21300278: dronesheettrans_139
+    21300280: dronesheettrans_140
+    21300282: dronesheettrans_141
+    21300284: dronesheettrans_142
+    21300286: dronesheettrans_143
+    21300288: dronesheettrans_144
+    21300290: dronesheettrans_145
+    21300292: dronesheettrans_146
+    21300294: dronesheettrans_147
+    21300296: dronesheettrans_148
+    21300298: dronesheettrans_149
+    21300300: dronesheettrans_150
+    21300302: dronesheettrans_151
+    21300304: dronesheettrans_152
+    21300306: dronesheettrans_153
+    21300308: dronesheettrans_154
+    21300310: dronesheettrans_155
+    21300312: dronesheettrans_156
+    21300314: dronesheettrans_157
+    21300316: dronesheettrans_158
+    21300318: dronesheettrans_159
+    21300320: dronesheettrans_160
+    21300322: dronesheettrans_161
+    21300324: dronesheettrans_162
+    21300326: dronesheettrans_163
+    21300328: dronesheettrans_164
+    21300330: dronesheettrans_165
+    21300332: dronesheettrans_166
+    21300334: dronesheettrans_167
+    21300336: dronesheettrans_168
+    21300338: dronesheettrans_169
+    21300340: dronesheettrans_170
+    21300342: dronesheettrans_171
+    21300344: dronesheettrans_172
+    21300346: dronesheettrans_173
+    21300348: dronesheettrans_174
+    21300350: dronesheettrans_175
+    21300352: dronesheettrans_176
+    21300354: dronesheettrans_177
+    21300356: dronesheettrans_178
+    21300358: dronesheettrans_179
+    21300360: dronesheettrans_180
+    21300362: dronesheettrans_181
+    21300364: dronesheettrans_182
+    21300366: dronesheettrans_183
+    21300368: dronesheettrans_184
+    21300370: dronesheettrans_185
+    21300372: dronesheettrans_186
+    21300374: dronesheettrans_187
+    21300376: dronesheettrans_188
+    21300378: dronesheettrans_189
+    21300380: dronesheettrans_190
+    21300382: dronesheettrans_191
+    21300384: dronesheettrans_192
+    21300386: dronesheettrans_193
+    21300388: dronesheettrans_194
+    21300390: dronesheettrans_195
+    21300392: dronesheettrans_196
+    21300394: dronesheettrans_197
+    21300396: dronesheettrans_198
+    21300398: dronesheettrans_199
+    21300400: dronesheettrans_200
+    21300402: dronesheettrans_201
+    21300404: dronesheettrans_202
+    21300406: dronesheettrans_203
+    21300408: dronesheettrans_204
+    21300410: dronesheettrans_205
+    21300412: dronesheettrans_206
+    21300414: dronesheettrans_207
+    21300416: dronesheettrans_208
+    21300418: dronesheettrans_209
+    21300420: dronesheettrans_210
+    21300422: dronesheettrans_211
+    21300424: dronesheettrans_212
+    21300426: dronesheettrans_213
+    21300428: dronesheettrans_214
+    21300430: dronesheettrans_215
+    21300432: dronesheettrans_216
+    21300434: dronesheettrans_217
+    21300436: dronesheettrans_218
+    21300438: dronesheettrans_219
+    21300440: dronesheettrans_220
+    21300442: dronesheettrans_221
+    21300444: dronesheettrans_222
+    21300446: dronesheettrans_223
+    21300448: dronesheettrans_224
+    21300450: dronesheettrans_225
+    21300452: dronesheettrans_226
+    21300454: dronesheettrans_227
+    21300456: dronesheettrans_228
+    21300458: dronesheettrans_229
+    21300460: dronesheettrans_230
+    21300462: dronesheettrans_231
+    21300464: dronesheettrans_232
+    21300466: dronesheettrans_233
+    21300468: dronesheettrans_234
+    21300470: dronesheettrans_235
+    21300472: dronesheettrans_236
+    21300474: dronesheettrans_237
+    21300476: dronesheettrans_238
+    21300478: dronesheettrans_239
+    21300480: dronesheettrans_240
+    21300482: dronesheettrans_241
+    21300484: dronesheettrans_242
+    21300486: dronesheettrans_243
+    21300488: dronesheettrans_244
+    21300490: dronesheettrans_245
+    21300492: dronesheettrans_246
+    21300494: dronesheettrans_247
+    21300496: dronesheettrans_248
+    21300498: dronesheettrans_249
+    21300500: dronesheettrans_250
+    21300502: dronesheettrans_251
+    21300504: dronesheettrans_252
+    21300506: dronesheettrans_253
+    21300508: dronesheettrans_254
+    21300510: dronesheettrans_255
+    21300512: dronesheettrans_256
+    21300514: dronesheettrans_257
+    21300516: dronesheettrans_258
+    21300518: dronesheettrans_259
+    21300520: dronesheettrans_260
+    21300522: dronesheettrans_261
+    21300524: dronesheettrans_262
+    21300526: dronesheettrans_263
+    21300528: dronesheettrans_264
+    21300530: dronesheettrans_265
+    21300532: dronesheettrans_266
+    21300534: dronesheettrans_267
+    21300536: dronesheettrans_268
+    21300538: dronesheettrans_269
+    21300540: dronesheettrans_270
+    21300542: dronesheettrans_271
+    21300544: dronesheettrans_272
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 200
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: dronesheettrans_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3200
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_1
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 3200
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_2
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 3200
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_3
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 3200
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_4
+      rect:
+        serializedVersion: 2
+        x: 1432
+        y: 3200
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_5
+      rect:
+        serializedVersion: 2
+        x: 1790
+        y: 3200
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_6
+      rect:
+        serializedVersion: 2
+        x: 2148
+        y: 3200
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_7
+      rect:
+        serializedVersion: 2
+        x: 2506
+        y: 3200
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_8
+      rect:
+        serializedVersion: 2
+        x: 2864
+        y: 3200
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_9
+      rect:
+        serializedVersion: 2
+        x: 3222
+        y: 3200
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_10
+      rect:
+        serializedVersion: 2
+        x: 3580
+        y: 3200
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_11
+      rect:
+        serializedVersion: 2
+        x: 3938
+        y: 3200
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_12
+      rect:
+        serializedVersion: 2
+        x: 4296
+        y: 3200
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3040
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_14
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 3040
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_15
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 3040
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_16
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 3040
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_17
+      rect:
+        serializedVersion: 2
+        x: 1432
+        y: 3040
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_18
+      rect:
+        serializedVersion: 2
+        x: 1790
+        y: 3040
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_19
+      rect:
+        serializedVersion: 2
+        x: 2148
+        y: 3040
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_20
+      rect:
+        serializedVersion: 2
+        x: 2506
+        y: 3040
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_21
+      rect:
+        serializedVersion: 2
+        x: 2864
+        y: 3040
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_22
+      rect:
+        serializedVersion: 2
+        x: 3222
+        y: 3040
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_23
+      rect:
+        serializedVersion: 2
+        x: 3580
+        y: 3040
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_24
+      rect:
+        serializedVersion: 2
+        x: 3938
+        y: 3040
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_25
+      rect:
+        serializedVersion: 2
+        x: 4296
+        y: 3040
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2880
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_27
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 2880
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_28
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 2880
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_29
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 2880
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_30
+      rect:
+        serializedVersion: 2
+        x: 1432
+        y: 2880
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_31
+      rect:
+        serializedVersion: 2
+        x: 1790
+        y: 2880
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_32
+      rect:
+        serializedVersion: 2
+        x: 2148
+        y: 2880
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_33
+      rect:
+        serializedVersion: 2
+        x: 2506
+        y: 2880
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_34
+      rect:
+        serializedVersion: 2
+        x: 2864
+        y: 2880
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_35
+      rect:
+        serializedVersion: 2
+        x: 3222
+        y: 2880
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_36
+      rect:
+        serializedVersion: 2
+        x: 3580
+        y: 2880
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_37
+      rect:
+        serializedVersion: 2
+        x: 3938
+        y: 2880
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_38
+      rect:
+        serializedVersion: 2
+        x: 4296
+        y: 2880
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2720
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_40
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 2720
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_41
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 2720
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_42
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 2720
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_43
+      rect:
+        serializedVersion: 2
+        x: 1432
+        y: 2720
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_44
+      rect:
+        serializedVersion: 2
+        x: 1790
+        y: 2720
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_45
+      rect:
+        serializedVersion: 2
+        x: 2148
+        y: 2720
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_46
+      rect:
+        serializedVersion: 2
+        x: 2506
+        y: 2720
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_47
+      rect:
+        serializedVersion: 2
+        x: 2864
+        y: 2720
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_48
+      rect:
+        serializedVersion: 2
+        x: 3222
+        y: 2720
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_49
+      rect:
+        serializedVersion: 2
+        x: 3580
+        y: 2720
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_50
+      rect:
+        serializedVersion: 2
+        x: 3938
+        y: 2720
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_51
+      rect:
+        serializedVersion: 2
+        x: 4296
+        y: 2720
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_52
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2560
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_53
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 2560
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_54
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 2560
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_55
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 2560
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_56
+      rect:
+        serializedVersion: 2
+        x: 1432
+        y: 2560
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_57
+      rect:
+        serializedVersion: 2
+        x: 1790
+        y: 2560
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_58
+      rect:
+        serializedVersion: 2
+        x: 2148
+        y: 2560
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_59
+      rect:
+        serializedVersion: 2
+        x: 2506
+        y: 2560
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_60
+      rect:
+        serializedVersion: 2
+        x: 2864
+        y: 2560
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_61
+      rect:
+        serializedVersion: 2
+        x: 3222
+        y: 2560
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_62
+      rect:
+        serializedVersion: 2
+        x: 3580
+        y: 2560
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_63
+      rect:
+        serializedVersion: 2
+        x: 3938
+        y: 2560
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_64
+      rect:
+        serializedVersion: 2
+        x: 4296
+        y: 2560
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_65
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2400
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_66
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 2400
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_67
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 2400
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_68
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 2400
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_69
+      rect:
+        serializedVersion: 2
+        x: 1432
+        y: 2400
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_70
+      rect:
+        serializedVersion: 2
+        x: 1790
+        y: 2400
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_71
+      rect:
+        serializedVersion: 2
+        x: 2148
+        y: 2400
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_72
+      rect:
+        serializedVersion: 2
+        x: 2506
+        y: 2400
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_73
+      rect:
+        serializedVersion: 2
+        x: 2864
+        y: 2400
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_74
+      rect:
+        serializedVersion: 2
+        x: 3222
+        y: 2400
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_75
+      rect:
+        serializedVersion: 2
+        x: 3580
+        y: 2400
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_76
+      rect:
+        serializedVersion: 2
+        x: 3938
+        y: 2400
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_77
+      rect:
+        serializedVersion: 2
+        x: 4296
+        y: 2400
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_78
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2240
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_79
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 2240
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_80
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 2240
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_81
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 2240
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_82
+      rect:
+        serializedVersion: 2
+        x: 1432
+        y: 2240
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_83
+      rect:
+        serializedVersion: 2
+        x: 1790
+        y: 2240
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_84
+      rect:
+        serializedVersion: 2
+        x: 2148
+        y: 2240
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_85
+      rect:
+        serializedVersion: 2
+        x: 2506
+        y: 2240
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_86
+      rect:
+        serializedVersion: 2
+        x: 2864
+        y: 2240
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_87
+      rect:
+        serializedVersion: 2
+        x: 3222
+        y: 2240
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_88
+      rect:
+        serializedVersion: 2
+        x: 3580
+        y: 2240
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_89
+      rect:
+        serializedVersion: 2
+        x: 3938
+        y: 2240
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_90
+      rect:
+        serializedVersion: 2
+        x: 4296
+        y: 2240
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_91
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2080
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_92
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 2080
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_93
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 2080
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_94
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 2080
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_95
+      rect:
+        serializedVersion: 2
+        x: 1432
+        y: 2080
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_96
+      rect:
+        serializedVersion: 2
+        x: 1790
+        y: 2080
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_97
+      rect:
+        serializedVersion: 2
+        x: 2148
+        y: 2080
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_98
+      rect:
+        serializedVersion: 2
+        x: 2506
+        y: 2080
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_99
+      rect:
+        serializedVersion: 2
+        x: 2864
+        y: 2080
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_100
+      rect:
+        serializedVersion: 2
+        x: 3222
+        y: 2080
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_101
+      rect:
+        serializedVersion: 2
+        x: 3580
+        y: 2080
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_102
+      rect:
+        serializedVersion: 2
+        x: 3938
+        y: 2080
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_103
+      rect:
+        serializedVersion: 2
+        x: 4296
+        y: 2080
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_104
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1920
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_105
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 1920
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_106
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 1920
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_107
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 1920
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_108
+      rect:
+        serializedVersion: 2
+        x: 1432
+        y: 1920
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_109
+      rect:
+        serializedVersion: 2
+        x: 1790
+        y: 1920
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_110
+      rect:
+        serializedVersion: 2
+        x: 2148
+        y: 1920
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_111
+      rect:
+        serializedVersion: 2
+        x: 2506
+        y: 1920
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_112
+      rect:
+        serializedVersion: 2
+        x: 2864
+        y: 1920
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_113
+      rect:
+        serializedVersion: 2
+        x: 3222
+        y: 1920
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_114
+      rect:
+        serializedVersion: 2
+        x: 3580
+        y: 1920
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_115
+      rect:
+        serializedVersion: 2
+        x: 3938
+        y: 1920
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_116
+      rect:
+        serializedVersion: 2
+        x: 4296
+        y: 1920
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_117
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1760
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_118
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 1760
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_119
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 1760
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_120
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 1760
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_121
+      rect:
+        serializedVersion: 2
+        x: 1432
+        y: 1760
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_122
+      rect:
+        serializedVersion: 2
+        x: 1790
+        y: 1760
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_123
+      rect:
+        serializedVersion: 2
+        x: 2148
+        y: 1760
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_124
+      rect:
+        serializedVersion: 2
+        x: 2506
+        y: 1760
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_125
+      rect:
+        serializedVersion: 2
+        x: 2864
+        y: 1760
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_126
+      rect:
+        serializedVersion: 2
+        x: 3222
+        y: 1760
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_127
+      rect:
+        serializedVersion: 2
+        x: 3580
+        y: 1760
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_128
+      rect:
+        serializedVersion: 2
+        x: 3938
+        y: 1760
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_129
+      rect:
+        serializedVersion: 2
+        x: 4296
+        y: 1760
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_130
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1600
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_131
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 1600
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_132
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 1600
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_133
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 1600
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_134
+      rect:
+        serializedVersion: 2
+        x: 1432
+        y: 1600
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_135
+      rect:
+        serializedVersion: 2
+        x: 1790
+        y: 1600
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_136
+      rect:
+        serializedVersion: 2
+        x: 2148
+        y: 1600
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_137
+      rect:
+        serializedVersion: 2
+        x: 2506
+        y: 1600
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_138
+      rect:
+        serializedVersion: 2
+        x: 2864
+        y: 1600
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_139
+      rect:
+        serializedVersion: 2
+        x: 3222
+        y: 1600
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_140
+      rect:
+        serializedVersion: 2
+        x: 3580
+        y: 1600
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_141
+      rect:
+        serializedVersion: 2
+        x: 3938
+        y: 1600
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_142
+      rect:
+        serializedVersion: 2
+        x: 4296
+        y: 1600
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_143
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1440
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_144
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 1440
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_145
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 1440
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_146
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 1440
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_147
+      rect:
+        serializedVersion: 2
+        x: 1432
+        y: 1440
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_148
+      rect:
+        serializedVersion: 2
+        x: 1790
+        y: 1440
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_149
+      rect:
+        serializedVersion: 2
+        x: 2148
+        y: 1440
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_150
+      rect:
+        serializedVersion: 2
+        x: 2506
+        y: 1440
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_151
+      rect:
+        serializedVersion: 2
+        x: 2864
+        y: 1440
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_152
+      rect:
+        serializedVersion: 2
+        x: 3222
+        y: 1440
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_153
+      rect:
+        serializedVersion: 2
+        x: 3580
+        y: 1440
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_154
+      rect:
+        serializedVersion: 2
+        x: 3938
+        y: 1440
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_155
+      rect:
+        serializedVersion: 2
+        x: 4296
+        y: 1440
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_156
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1280
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_157
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 1280
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_158
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 1280
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_159
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 1280
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_160
+      rect:
+        serializedVersion: 2
+        x: 1432
+        y: 1280
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_161
+      rect:
+        serializedVersion: 2
+        x: 1790
+        y: 1280
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_162
+      rect:
+        serializedVersion: 2
+        x: 2148
+        y: 1280
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_163
+      rect:
+        serializedVersion: 2
+        x: 2506
+        y: 1280
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_164
+      rect:
+        serializedVersion: 2
+        x: 2864
+        y: 1280
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_165
+      rect:
+        serializedVersion: 2
+        x: 3222
+        y: 1280
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_166
+      rect:
+        serializedVersion: 2
+        x: 3580
+        y: 1280
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_167
+      rect:
+        serializedVersion: 2
+        x: 3938
+        y: 1280
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_168
+      rect:
+        serializedVersion: 2
+        x: 4296
+        y: 1280
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_169
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1120
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_170
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 1120
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_171
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 1120
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_172
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 1120
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_173
+      rect:
+        serializedVersion: 2
+        x: 1432
+        y: 1120
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_174
+      rect:
+        serializedVersion: 2
+        x: 1790
+        y: 1120
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_175
+      rect:
+        serializedVersion: 2
+        x: 2148
+        y: 1120
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_176
+      rect:
+        serializedVersion: 2
+        x: 2506
+        y: 1120
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_177
+      rect:
+        serializedVersion: 2
+        x: 2864
+        y: 1120
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_178
+      rect:
+        serializedVersion: 2
+        x: 3222
+        y: 1120
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_179
+      rect:
+        serializedVersion: 2
+        x: 3580
+        y: 1120
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_180
+      rect:
+        serializedVersion: 2
+        x: 3938
+        y: 1120
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_181
+      rect:
+        serializedVersion: 2
+        x: 4296
+        y: 1120
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_182
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 960
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_183
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 960
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_184
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 960
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_185
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 960
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_186
+      rect:
+        serializedVersion: 2
+        x: 1432
+        y: 960
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_187
+      rect:
+        serializedVersion: 2
+        x: 1790
+        y: 960
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_188
+      rect:
+        serializedVersion: 2
+        x: 2148
+        y: 960
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_189
+      rect:
+        serializedVersion: 2
+        x: 2506
+        y: 960
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_190
+      rect:
+        serializedVersion: 2
+        x: 2864
+        y: 960
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_191
+      rect:
+        serializedVersion: 2
+        x: 3222
+        y: 960
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_192
+      rect:
+        serializedVersion: 2
+        x: 3580
+        y: 960
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_193
+      rect:
+        serializedVersion: 2
+        x: 3938
+        y: 960
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_194
+      rect:
+        serializedVersion: 2
+        x: 4296
+        y: 960
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_195
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 800
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_196
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 800
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_197
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 800
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_198
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 800
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_199
+      rect:
+        serializedVersion: 2
+        x: 1432
+        y: 800
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_200
+      rect:
+        serializedVersion: 2
+        x: 1790
+        y: 800
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_201
+      rect:
+        serializedVersion: 2
+        x: 2148
+        y: 800
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_202
+      rect:
+        serializedVersion: 2
+        x: 2506
+        y: 800
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_203
+      rect:
+        serializedVersion: 2
+        x: 2864
+        y: 800
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_204
+      rect:
+        serializedVersion: 2
+        x: 3222
+        y: 800
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_205
+      rect:
+        serializedVersion: 2
+        x: 3580
+        y: 800
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_206
+      rect:
+        serializedVersion: 2
+        x: 3938
+        y: 800
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_207
+      rect:
+        serializedVersion: 2
+        x: 4296
+        y: 800
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_208
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 640
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_209
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 640
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_210
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 640
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_211
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 640
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_212
+      rect:
+        serializedVersion: 2
+        x: 1432
+        y: 640
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_213
+      rect:
+        serializedVersion: 2
+        x: 1790
+        y: 640
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_214
+      rect:
+        serializedVersion: 2
+        x: 2148
+        y: 640
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_215
+      rect:
+        serializedVersion: 2
+        x: 2506
+        y: 640
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_216
+      rect:
+        serializedVersion: 2
+        x: 2864
+        y: 640
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_217
+      rect:
+        serializedVersion: 2
+        x: 3222
+        y: 640
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_218
+      rect:
+        serializedVersion: 2
+        x: 3580
+        y: 640
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_219
+      rect:
+        serializedVersion: 2
+        x: 3938
+        y: 640
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_220
+      rect:
+        serializedVersion: 2
+        x: 4296
+        y: 640
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_221
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 480
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_222
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 480
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_223
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 480
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_224
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 480
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_225
+      rect:
+        serializedVersion: 2
+        x: 1432
+        y: 480
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_226
+      rect:
+        serializedVersion: 2
+        x: 1790
+        y: 480
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_227
+      rect:
+        serializedVersion: 2
+        x: 2148
+        y: 480
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_228
+      rect:
+        serializedVersion: 2
+        x: 2506
+        y: 480
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_229
+      rect:
+        serializedVersion: 2
+        x: 2864
+        y: 480
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_230
+      rect:
+        serializedVersion: 2
+        x: 3222
+        y: 480
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_231
+      rect:
+        serializedVersion: 2
+        x: 3580
+        y: 480
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_232
+      rect:
+        serializedVersion: 2
+        x: 3938
+        y: 480
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_233
+      rect:
+        serializedVersion: 2
+        x: 4296
+        y: 480
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_234
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_235
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 320
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_236
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 320
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_237
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 320
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_238
+      rect:
+        serializedVersion: 2
+        x: 1432
+        y: 320
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_239
+      rect:
+        serializedVersion: 2
+        x: 1790
+        y: 320
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_240
+      rect:
+        serializedVersion: 2
+        x: 2148
+        y: 320
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_241
+      rect:
+        serializedVersion: 2
+        x: 2506
+        y: 320
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_242
+      rect:
+        serializedVersion: 2
+        x: 2864
+        y: 320
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_243
+      rect:
+        serializedVersion: 2
+        x: 3222
+        y: 320
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_244
+      rect:
+        serializedVersion: 2
+        x: 3580
+        y: 320
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_245
+      rect:
+        serializedVersion: 2
+        x: 3938
+        y: 320
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_246
+      rect:
+        serializedVersion: 2
+        x: 4296
+        y: 320
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_247
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_248
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 160
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_249
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 160
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_250
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 160
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_251
+      rect:
+        serializedVersion: 2
+        x: 1432
+        y: 160
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_252
+      rect:
+        serializedVersion: 2
+        x: 1790
+        y: 160
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_253
+      rect:
+        serializedVersion: 2
+        x: 2148
+        y: 160
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_254
+      rect:
+        serializedVersion: 2
+        x: 2506
+        y: 160
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_255
+      rect:
+        serializedVersion: 2
+        x: 2864
+        y: 160
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_256
+      rect:
+        serializedVersion: 2
+        x: 3222
+        y: 160
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_257
+      rect:
+        serializedVersion: 2
+        x: 3580
+        y: 160
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_258
+      rect:
+        serializedVersion: 2
+        x: 3938
+        y: 160
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_259
+      rect:
+        serializedVersion: 2
+        x: 4296
+        y: 160
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_260
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_261
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 0
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_262
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 0
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_263
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 0
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_264
+      rect:
+        serializedVersion: 2
+        x: 1432
+        y: 0
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_265
+      rect:
+        serializedVersion: 2
+        x: 1790
+        y: 0
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_266
+      rect:
+        serializedVersion: 2
+        x: 2148
+        y: 0
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_267
+      rect:
+        serializedVersion: 2
+        x: 2506
+        y: 0
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_268
+      rect:
+        serializedVersion: 2
+        x: 2864
+        y: 0
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_269
+      rect:
+        serializedVersion: 2
+        x: 3222
+        y: 0
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_270
+      rect:
+        serializedVersion: 2
+        x: 3580
+        y: 0
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_271
+      rect:
+        serializedVersion: 2
+        x: 3938
+        y: 0
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dronesheettrans_272
+      rect:
+        serializedVersion: 2
+        x: 4296
+        y: 0
+        width: 358
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

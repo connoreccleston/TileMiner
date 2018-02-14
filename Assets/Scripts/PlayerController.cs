@@ -1,51 +1,62 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using DG.Tweening;
+
+// Find way to prevent input when tiles in view are flipping.
 
 public class PlayerController : MonoBehaviour
 {
-    public Direction Facing = Direction.North;
-    public Vector3Int Position = Vector3Int.zero;
+    public float ZoomSpeed = 250;
+    public float MineSpeed = 1;
 
-    private bool dirtyWorld = false;
+    public static Direction Facing { get; private set; }
+    public static Vector3 Position { get; private set; }
+
+    private void Start()
+    {
+        Facing = Direction.North;
+        Position = transform.position;
+        Camera.main.transform.parent.transform.position = Position;
+        //WorldManager.SetTileType(gameObject, TileType.Air);
+    }
 
     private void Update()
     {
-        Vector3Int aVector, dVector, qVector, eVector;
-        aVector = dVector = qVector = eVector = new Vector3Int();
+        Vector3 aVector, dVector, qVector, eVector;
+        aVector = dVector = qVector = eVector = new Vector3();
 
         switch (Facing)
         {
             case Direction.North:
-                aVector = Vector3Int.left;
-                dVector = Vector3Int.right;
-                qVector = Vector3Int.RoundToInt(Vector3.back);
-                eVector = Vector3Int.RoundToInt(Vector3.forward);
+                aVector = Vector3.left;
+                dVector = Vector3.right;
+                qVector = Vector3.back;
+                eVector = Vector3.forward;
                 break;
             case Direction.East:
-                aVector = Vector3Int.RoundToInt(Vector3.forward); 
-                dVector = Vector3Int.RoundToInt(Vector3.back); 
-                qVector = Vector3Int.left;
-                eVector = Vector3Int.right;
+                aVector = Vector3.forward; 
+                dVector = Vector3.back; 
+                qVector = Vector3.left;
+                eVector = Vector3.right;
                 break;
             case Direction.South:
-                aVector = Vector3Int.right;
-                dVector = Vector3Int.left;
-                qVector = Vector3Int.RoundToInt(Vector3.forward);
-                eVector = Vector3Int.RoundToInt(Vector3.back);
+                aVector = Vector3.right;
+                dVector = Vector3.left;
+                qVector = Vector3.forward;
+                eVector = Vector3.back;
                 break;
             case Direction.West:
-                aVector = Vector3Int.RoundToInt(Vector3.back);
-                dVector = Vector3Int.RoundToInt(Vector3.forward);
-                qVector = Vector3Int.right;
-                eVector = Vector3Int.left;
+                aVector = Vector3.back;
+                dVector = Vector3.forward;
+                qVector = Vector3.right;
+                eVector = Vector3.left;
                 break;
         }
 
+        // Movement
         if (Input.GetKeyDown(KeyCode.W))
-            Position += Vector3Int.up;
+            Position += Vector3.up;
         if (Input.GetKeyDown(KeyCode.S))
-            Position += Vector3Int.down;
+            Position += Vector3.down;
         if (Input.GetKeyDown(KeyCode.A))
             Position += aVector;
         if (Input.GetKeyDown(KeyCode.D))
@@ -53,35 +64,45 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             Position += qVector;
-            dirtyWorld = true;
+            TileBehaviour.ResetAll();
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
             Position += eVector;
-            dirtyWorld = true;
-        }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            Facing = (Direction)(((int)Facing - 1 + 4) % 4);
-            dirtyWorld = true;
-        }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            Facing = (Direction)(((int)Facing + 1) % 4);
-            dirtyWorld = true;
-        }
-    }
-
-    private void LateUpdate()
-    {
-        if (dirtyWorld)
-        {
             TileBehaviour.ResetAll();
-            dirtyWorld = false;
         }
 
-        //Camera.main.transform.position = Vector3.SmoothDamp()
+        // Turning
+        //if (Input.GetKeyDown(KeyCode.LeftArrow))
+        //{
+        //    Facing = (Direction)(((int)Facing - 1 + 4) % 4);
+        //    TileBehaviour.ResetAll();
+        //}
+        //if (Input.GetKeyDown(KeyCode.RightArrow))
+        //{
+        //    Facing = (Direction)(((int)Facing + 1) % 4);
+        //    TileBehaviour.ResetAll();
+        //}
+
+        // Zooming
+        float size = Camera.main.orthographicSize - Input.GetAxis("Mouse ScrollWheel") * ZoomSpeed * Time.deltaTime;
+        Camera.main.orthographicSize = Mathf.Clamp(size, 2, 16);
+
+        // Mining
+        if (Input.GetMouseButton(0))
+        {
+            Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            int hits = Physics2D.LinecastNonAlloc(new Vector2(pos.x, pos.y), new Vector2(pos.x, pos.y), hit);
+            if (hits != 0)
+                hit[0].transform.GetComponent<TileBehaviour>().Mine(MineSpeed * Time.deltaTime);
+        }
+
+        // Follow
+        transform.DOMove(Position, 0.25f);
+        if (Vector3.Distance(Position, Camera.main.transform.parent.transform.position) > Camera.main.orthographicSize - 2)
+            Camera.main.transform.parent.DOMove(Position, 0.75f);
     }
+    RaycastHit2D[] hit = new RaycastHit2D[1];
 }
 
 public enum Direction

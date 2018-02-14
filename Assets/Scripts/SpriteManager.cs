@@ -1,11 +1,13 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
+// Should add a way to cull all the excess tiles when shrinking.
+
 public class SpriteManager : MonoBehaviour
 {
     private float LastSize = 0;
     private Vector3Int LastPos;
-    private Queue<GameObject> Recycle = new Queue<GameObject>();
+    private Stack<GameObject> Recycle = new Stack<GameObject>();
     private HashSet<GameObject> Seen = new HashSet<GameObject>();
 
     private GameObject Container;
@@ -21,7 +23,7 @@ public class SpriteManager : MonoBehaviour
         GameObject go;
         if (Recycle.Count > 0)
         {
-            go = Recycle.Dequeue();
+            go = Recycle.Pop();
             Seen.Remove(go);
         }
         else
@@ -54,7 +56,7 @@ public class SpriteManager : MonoBehaviour
             {
                 if (!Seen.Contains(tile.gameObject))
                 {
-                    Recycle.Enqueue(tile.gameObject);
+                    Recycle.Push(tile.gameObject);
                     Seen.Add(tile.gameObject);
                 }
             }

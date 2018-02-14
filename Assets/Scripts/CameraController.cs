@@ -14,17 +14,17 @@ public class CameraController : MonoBehaviour
         int y = (Input.GetKey(KeyCode.S) ? -1 : 0) + (Input.GetKey(KeyCode.W) ? 1 : 0);
         Camera.main.transform.position += new Vector3(x, y, 0) * MoveSpeed * Time.deltaTime;
 
-        // Z Movement
-        if (Input.GetKeyDown(KeyCode.Q))
-            WorldManager.Move(false);
-        if (Input.GetKeyDown(KeyCode.E))
-            WorldManager.Move(true);
+        //// Z Movement
+        //if (Input.GetKeyDown(KeyCode.Q))
+        //    WorldManager.Move(false);
+        //if (Input.GetKeyDown(KeyCode.E))
+        //    WorldManager.Move(true);
 
-        // Turning
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-            WorldManager.Turn(false);
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-            WorldManager.Turn(true);
+        //// Turning
+        //if (Input.GetKeyDown(KeyCode.LeftArrow))
+        //    WorldManager.Turn(false);
+        //if (Input.GetKeyDown(KeyCode.RightArrow))
+        //    WorldManager.Turn(true);
 
         // Zoom
         float size = Camera.main.orthographicSize - Input.GetAxis("Mouse ScrollWheel") * ZoomSpeed * Time.deltaTime;

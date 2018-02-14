@@ -13,6 +13,9 @@ public class TileBehaviour : MonoBehaviour
     private SpriteRenderer SR;
     private BoxCollider2D BC;
 
+    public static int NumAnimating = 0;
+    public const float AnimTime = 1.5f;
+
     private void Start()
 	{
         LastPosition = transform.position;
@@ -48,6 +51,7 @@ public class TileBehaviour : MonoBehaviour
         if (animate)
         {
             Animating = true;
+            NumAnimating++;
         }
         else
         {
@@ -61,8 +65,8 @@ public class TileBehaviour : MonoBehaviour
         TileBehaviour[] allTiles = FindObjectsOfType<TileBehaviour>();
         float[] delays = new float[allTiles.Length];
 
-        float left = Camera.main.transform.position.x - Camera.main.orthographicSize * Camera.main.aspect;
-        float top = Camera.main.transform.position.y + Camera.main.orthographicSize;
+        float left = Camera.main.transform.position.x - Camera.main.orthographicSize * Camera.main.aspect - 1;
+        float top = Camera.main.transform.position.y + Camera.main.orthographicSize + 1;
 
         float max = 0;
         for (int i = 0; i < allTiles.Length; i++)
@@ -74,7 +78,7 @@ public class TileBehaviour : MonoBehaviour
         }
 
         for (int i = 0; i < allTiles.Length; i++)
-            allTiles[i].Invoke("ResetTile", delays[i] / max * 2);
+            allTiles[i].Invoke("ResetTile", delays[i] / max * AnimTime);
     }
 
     private void ResetTile()
@@ -98,6 +102,7 @@ public class TileBehaviour : MonoBehaviour
             if (transform.eulerAngles.y > 180)
             {
                 Animating = false;
+                NumAnimating--;
                 SR.flipX = false;
                 transform.eulerAngles = new Vector3(0, 0, 0);
                 Destroy(BC);
