@@ -4,6 +4,7 @@ public class TileBehaviour : MonoBehaviour
 {
     private TileDatum Data;
     private float Damage = 0;
+    private int Depth;
 
     private bool Animating = false;
     private Color NewColor;
@@ -27,17 +28,18 @@ public class TileBehaviour : MonoBehaviour
 
     public void ResetTile(bool animate)
     {
-        int depth;
-        Data = WorldManager.TileTable[WorldManager.GetTileType(transform.position, out depth)];
+        // needs to change based on direction
+        Vector3 position = new Vector3(transform.position.x, transform.position.y, PlayerController.Position.z);
+        Data = WorldManager.TileTable[WorldManager.GetTileType(position, out Depth)];
 
-        if (depth != 0)
-        {
-            Sprite temp = Data.Sprite;
-            Data = WorldManager.TileTable[TileType.Air];
-            Data.Sprite = temp;
-        }
+        //if (depth != 0)
+        //{
+        //    Sprite temp = Data.Sprite;
+        //    Data = WorldManager.TileTable[TileType.Air];
+        //    Data.Sprite = temp;
+        //}
 
-        ChangeSprite(depth, animate);
+        ChangeSprite(Depth, animate);
         name = Data.Type.ToString();
         ResetDamage();
     }
@@ -120,7 +122,7 @@ public class TileBehaviour : MonoBehaviour
 
     public void Mine(float amount)
     {
-        if (Data.Hardness == -1 || Animating)
+        if (Data.Hardness == -1 || Animating || Depth > 1)
             return;
 
         Damage += amount;
@@ -135,7 +137,8 @@ public class TileBehaviour : MonoBehaviour
 
     private void Break()
     {
-        WorldManager.SetTileType(gameObject, TileType.Air);
+        Vector3 position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, PlayerController.Position.z);
+        WorldManager.SetTileType(position + new Vector3(0, 0, Depth), TileType.Air);
         ResetTile(true);
     }
 }

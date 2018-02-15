@@ -14,13 +14,16 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         Facing = Direction.North;
-        Position = transform.position;
+        Position = transform.position + new Vector3(0, 0, 2);
         Camera.main.transform.parent.transform.position = Position;
-        //WorldManager.SetTileType(gameObject, TileType.Air);
+        WorldManager.SetTileType(Position, TileType.Air);
     }
 
     private void Update()
     {
+        Vector3 tempPos = Position;
+        bool dirtyWorld = false;
+
         Vector3 aVector, dVector, qVector, eVector;
         aVector = dVector = qVector = eVector = new Vector3();
 
@@ -54,35 +57,45 @@ public class PlayerController : MonoBehaviour
 
         // Movement
         if (Input.GetKeyDown(KeyCode.W))
-            Position += Vector3.up;
+            tempPos += Vector3.up;
         if (Input.GetKeyDown(KeyCode.S))
-            Position += Vector3.down;
+            tempPos += Vector3.down;
         if (Input.GetKeyDown(KeyCode.A))
-            Position += aVector;
+            tempPos += aVector;
         if (Input.GetKeyDown(KeyCode.D))
-            Position += dVector;
+            tempPos += dVector;
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            Position += qVector;
-            TileBehaviour.ResetAll();
+            tempPos += qVector;
+            dirtyWorld = true;
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Position += eVector;
-            TileBehaviour.ResetAll();
+            tempPos += eVector;
+            dirtyWorld = true;
         }
+
+        int depth;
+        bool freeSpace = WorldManager.GetTileType(tempPos, out depth) == TileType.Air || depth > 0;
+        if (freeSpace && tempPos != Position)
+            Position = tempPos;
+        else
+            dirtyWorld = false;
 
         // Turning
         //if (Input.GetKeyDown(KeyCode.LeftArrow))
         //{
         //    Facing = (Direction)(((int)Facing - 1 + 4) % 4);
-        //    TileBehaviour.ResetAll();
+        //    dirtyWorld = true;
         //}
         //if (Input.GetKeyDown(KeyCode.RightArrow))
         //{
         //    Facing = (Direction)(((int)Facing + 1) % 4);
-        //    TileBehaviour.ResetAll();
+        //    dirtyWorld = true;
         //}
+
+        if (dirtyWorld)
+            TileBehaviour.ResetAll();
 
         // Zooming
         float size = Camera.main.orthographicSize - Input.GetAxis("Mouse ScrollWheel") * ZoomSpeed * Time.deltaTime;

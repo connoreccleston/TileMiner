@@ -60,18 +60,18 @@ public class WorldManager : MonoBehaviour
         {
             case Direction.North: // World[x, y, Slice]                
                 x = (int)Position.x;
-                z = (int)PlayerController.Position.z;
+                z = (int)Position.z;
                 break;
             case Direction.East: // World[-Slice, y, x]
-                x = -(int)PlayerController.Position.z;
+                x = (int)-Position.z;
                 z = (int)Position.x;
                 break;
             case Direction.South: // World[-x, y, -Slice]
                 x = (int)-Position.x;
-                z = -(int)PlayerController.Position.z;
+                z = (int)-Position.z;
                 break;
             case Direction.West: // World[Slice, y, -x]
-                x = (int)PlayerController.Position.z;
+                x = (int)Position.z;
                 z = (int)-Position.x;
                 break;
         }
@@ -109,11 +109,11 @@ public class WorldManager : MonoBehaviour
         return type;
     }
 
-    public static bool SetTileType(GameObject GO, TileType Type)
+    public static bool SetTileType(Vector3 Position, TileType Type)
     {
-        int x = (int)GO.transform.position.x;
-        int y = (int)GO.transform.position.y;
-        int z = (int)PlayerController.Position.z;
+        int x = (int)Position.x;
+        int y = (int)Position.y;
+        int z = (int)Position.z;
 
         if (x < 0 || y < 0 || z < 0 || x >= Size || y >= Size || z >= Size)
             return false;
