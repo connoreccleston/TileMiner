@@ -1,53 +1,48 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class WorldManager : MonoBehaviour
+public static class World
 {
-    public TileData Tiles;
-    public int Dimensions = 100;
+    public const int Size = 100;
+    private static TileType[,,] Map = new TileType[Size, Size, Size];
+    private static Dictionary<Vector3Int, TileMetadata> Special = new Dictionary<Vector3Int, TileMetadata>();
 
-    private static TileType[,,] World;
-    private static int Size;
-    //private static int Slice;
-    //private static Direction Facing = Direction.North;
-    public static Dictionary<TileType, TileDatum> TileTable = new Dictionary<TileType, TileDatum>();
-
-    private void Awake()
+    static World()
 	{
-        foreach (TileDatum temp in Tiles.Tiles)
-            TileTable.Add(temp.Type, temp);
 
-        Size = Dimensions;
+        for (int x = 0; x < Size; x++)
+            for (int y = 0; y < Size; y++)
+                for (int z = 0; z < Size; z++)
+                    Map[x, y, z] = (TileType)((x + y + z) % 2 + 1);
+    }
 
-        //Slice = Size / 2;
+    public static bool InBounds(int x, int y, int z)
+    {
+        return !(x < 0 || y < 0 || z < 0 || x >= Size || y >= Size || z >= Size);
+    }
 
-        World = new TileType[Size, Size, Size];
+    public static TileMetadata GetSpecial(int x, int y, int z)
+    {
+        return GetSpecial(new Vector3Int(x, y, z));
+    }
 
-        for (int i = 0; i < Size; i++)
-            for (int j = 0; j < Size; j++)
-                for (int k = 0; k < Size; k++)
-                    World[i, j, k] = (TileType)((i + j + k) % 2 + 1);
-	}
+    public static TileMetadata GetSpecial(Vector3Int location)
+    {
+        if (Special.ContainsKey(location))
+            return Special[location];
 
-    //public static void Move(bool forward)
-    //{
-    //    if (forward)
-    //        Slice++;
-    //    else
-    //        Slice--;
+        return null;
+    }
 
-    //    TileBehaviour.ResetAll();
-    //}
+    public static void SetSpecial(int x, int y, int z, TileMetadata tmd)
+    {
+        SetSpecial(new Vector3Int(x, y, z), tmd);
+    }
 
-    //public static void Turn(bool right)
-    //{
-    //    if (right)
-    //        Facing = (Direction)(((int)Facing - 1 + 4) % 4);
-    //    else
-    //        Facing = (Direction)(((int)Facing + 1) % 4);
-
-    //    TileBehaviour.ResetAll();
-    //}
+    public static void SetSpecial(Vector3Int location, TileMetadata tmd)
+    {
+        Special[location] = tmd;
+    }
 
     public static TileType GetTileType(Vector3 Position, out int Depth)
     {
@@ -76,10 +71,10 @@ public class WorldManager : MonoBehaviour
                 break;
         }
 
-        if (x < 0 || y < 0 || z < 0 || x >= Size || y >= Size || z >= Size)
+        if (!InBounds(x, y, z))
             return TileType.Air;
 
-        TileType type =  World[x, y, z];
+        TileType type =  Map[x, y, z];
 
         while (type == TileType.Air)
         {
@@ -99,10 +94,10 @@ public class WorldManager : MonoBehaviour
                     break;
             }
 
-            if (x < 0 || y < 0 || z < 0 || x >= Size || y >= Size || z >= Size)
+            if (!InBounds(x, y, z))
                 return TileType.Air;
 
-            type = World[x, y, z];
+            type = Map[x, y, z];
             Depth++;
         }
 
@@ -115,22 +110,24 @@ public class WorldManager : MonoBehaviour
         int y = (int)Position.y;
         int z = (int)Position.z;
 
-        if (x < 0 || y < 0 || z < 0 || x >= Size || y >= Size || z >= Size)
+        Debug.Log(x + " " + y + " " + z);
+
+        if (!InBounds(x, y, z))
             return false;
 
         switch (PlayerController.Facing)
         {
             case Direction.North:
-                World[x, y, z] = Type;
+                Map[x, y, z] = Type;
                 break;
             case Direction.East:
-                World[-z, y, x] = Type;
+                Map[-z, y, x] = Type;
                 break;
             case Direction.South:
-                World[-x, y, -z] = Type;
+                Map[-x, y, -z] = Type;
                 break;
             case Direction.West:
-                World[z, y, -x] = Type;
+                Map[z, y, -x] = Type;
                 break;
         }
 

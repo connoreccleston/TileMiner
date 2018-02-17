@@ -10,12 +10,12 @@ public class SpriteManager : MonoBehaviour
     private Stack<GameObject> Recycle = new Stack<GameObject>();
     private HashSet<GameObject> Seen = new HashSet<GameObject>();
 
-    private GameObject Container;
+    //private GameObject Container;
 
-    private void Awake()
+    private void Start()
     {
         LastPos = Vector3Int.RoundToInt(Camera.main.transform.position);
-        Container = new GameObject("Sprite Container");
+        //Container = new GameObject("Sprite Container");
     }
 
     private void CreateSprite(int x, int y)
@@ -30,11 +30,10 @@ public class SpriteManager : MonoBehaviour
         {
             go = new GameObject(null, typeof(TileBehaviour));
         }
-        go.transform.SetParent(Container.transform, true);
+        go.transform.SetParent(transform, true);
         go.transform.position = new Vector3(x, y, 0);
     }
 
-    RaycastHit2D[] hit = new RaycastHit2D[1];
 	private void Update()
 	{
         Vector3Int newPos = Vector3Int.RoundToInt(Camera.main.transform.position);
@@ -67,4 +66,5 @@ public class SpriteManager : MonoBehaviour
                         CreateSprite(x, y);
         }
     }
+    RaycastHit2D[] hit = new RaycastHit2D[1];
 }

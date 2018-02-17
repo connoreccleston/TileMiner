@@ -4,7 +4,8 @@ public class TileBehaviour : MonoBehaviour
 {
     private TileDatum Data;
     private float Damage = 0;
-    private int Depth;
+    //private int Depth;
+    public int Depth { get; private set; }
 
     private bool Animating = false;
     private Color NewColor;
@@ -14,8 +15,15 @@ public class TileBehaviour : MonoBehaviour
     private SpriteRenderer SR;
     private BoxCollider2D BC;
 
-    public static int NumAnimating = 0;
+    //public static int NumAnimating = 0;
     public const float AnimTime = 1.5f;
+
+    private static TileData TileData;
+    private void Awake()
+    {
+        if (TileData == null)
+            TileData = Resources.Load<TileData>("Tiles");
+    }
 
     private void Start()
 	{
@@ -30,7 +38,10 @@ public class TileBehaviour : MonoBehaviour
     {
         // needs to change based on direction
         Vector3 position = new Vector3(transform.position.x, transform.position.y, PlayerController.Position.z);
-        Data = WorldManager.TileTable[WorldManager.GetTileType(position, out Depth)];
+        //Debug.Log(position);
+        int depth;
+        Data = TileData.Find(World.GetTileType(position, out depth));
+        Depth = depth;
 
         //if (depth != 0)
         //{
@@ -42,24 +53,6 @@ public class TileBehaviour : MonoBehaviour
         ChangeSprite(Depth, animate);
         name = Data.Type.ToString();
         ResetDamage();
-    }
-
-    private void ChangeSprite(int depth, bool animate)
-    {
-        int shade = (16 - depth * 2) * (16 - depth * 2) - 1;
-        byte value = depth < 16 / 2 ? (byte)shade : (byte)0;
-        NewColor = new Color32(value, value, value, 255);
-
-        if (animate)
-        {
-            Animating = true;
-            NumAnimating++;
-        }
-        else
-        {
-            SR.sprite = Data.Sprite;
-            SR.color = NewColor;
-        }
     }
 
     public static void ResetAll()
@@ -82,10 +75,44 @@ public class TileBehaviour : MonoBehaviour
         for (int i = 0; i < allTiles.Length; i++)
             allTiles[i].Invoke("ResetTile", delays[i] / max * AnimTime);
     }
-
     private void ResetTile()
     {
         ResetTile(true);
+    }
+
+    private void ChangeSprite(int depth, bool animate)
+    {
+        int shade = (16 - depth * 2) * (16 - depth * 2) - 1;
+        byte value = depth < 16 / 2 ? (byte)shade : (byte)0;
+        NewColor = new Color32(value, value, value, 255);
+
+        if (animate)
+        {
+            Animating = true;
+            //NumAnimating++;
+        }
+        else
+        {
+            UpdateSprite();
+            doUpdate = true;
+        }
+    }
+
+    bool doUpdate = true;
+    private void UpdateSprite()
+    {
+        if (doUpdate)
+        {
+            if (!string.IsNullOrEmpty(Data.Behaviour))
+            {
+                Debug.Log(Data.Behaviour);
+                gameObject.AddComponent(System.Type.GetType(Data.Behaviour));
+            }
+            SR.sprite = Data.Sprite;
+            SR.color = NewColor;
+
+            doUpdate = false;
+        }
     }
 
     private void Update()
@@ -96,15 +123,15 @@ public class TileBehaviour : MonoBehaviour
 
             if (transform.eulerAngles.y > 90)
             {
-                SR.sprite = Data.Sprite;
-                SR.color = NewColor;
+                UpdateSprite();
                 SR.flipX = true;
             }
 
             if (transform.eulerAngles.y > 180)
             {
+                doUpdate = true;
                 Animating = false;
-                NumAnimating--;
+                //NumAnimating--;
                 SR.flipX = false;
                 transform.eulerAngles = new Vector3(0, 0, 0);
                 Destroy(BC);
@@ -138,7 +165,7 @@ public class TileBehaviour : MonoBehaviour
     private void Break()
     {
         Vector3 position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, PlayerController.Position.z);
-        WorldManager.SetTileType(position + new Vector3(0, 0, Depth), TileType.Air);
+        World.SetTileType(position + new Vector3(0, 0, Depth), TileType.Air);
         ResetTile(true);
     }
 }

@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
         Facing = Direction.North;
         Position = transform.position + new Vector3(0, 0, 2);
         Camera.main.transform.parent.transform.position = Position;
-        WorldManager.SetTileType(Position, TileType.Air);
+        World.SetTileType(Position, TileType.Air);
     }
 
     private void Update()
@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
         }
 
         int depth;
-        bool freeSpace = WorldManager.GetTileType(tempPos, out depth) == TileType.Air || depth > 0;
+        bool freeSpace = World.GetTileType(tempPos, out depth) == TileType.Air || depth > 0;
         if (freeSpace && tempPos != Position)
             Position = tempPos;
         else
@@ -108,6 +108,20 @@ public class PlayerController : MonoBehaviour
             int hits = Physics2D.LinecastNonAlloc(new Vector2(pos.x, pos.y), new Vector2(pos.x, pos.y), hit);
             if (hits != 0)
                 hit[0].transform.GetComponent<TileBehaviour>().Mine(MineSpeed * Time.deltaTime);
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            int hits = Physics2D.LinecastNonAlloc(new Vector2(pos.x, pos.y), new Vector2(pos.x, pos.y), hit);
+            if (hits != 0)
+            {
+                TileBehaviour tb = hit[0].transform.GetComponent<TileBehaviour>();
+                if (tb.Depth > 0)
+                {
+                    World.SetTileType(new Vector3(pos.x, pos.y, Position.z), TileType.Pylon);
+                    tb.ResetTile(true);
+                }
+            }
         }
 
         // Follow
