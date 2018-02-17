@@ -118,16 +118,33 @@ public class PlayerController : MonoBehaviour
                 TileBehaviour tb = hit[0].transform.GetComponent<TileBehaviour>();
                 if (tb.Depth > 0)
                 {
-                    World.SetTileType(new Vector3(pos.x, pos.y, Position.z), TileType.Pylon);
-                    tb.ResetTile(true);
+                    World.SetTileType(new Vector3(Mathf.Round(pos.x), Mathf.Round(pos.y), Mathf.Round(Position.z)), TileType.Pylon);
+                    tb.ResetTile(false);
+                }
+            }
+        }
+        if (Input.GetMouseButtonDown(2))
+        {
+            Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            int hits = Physics2D.LinecastNonAlloc(new Vector2(pos.x, pos.y), new Vector2(pos.x, pos.y), hit);
+            if (hits != 0)
+            {
+                TileBehaviour tb = hit[0].transform.GetComponent<TileBehaviour>();
+                if (tb.Depth > 0)
+                {
+                    World.SetTileType(new Vector3(Mathf.Round(pos.x), Mathf.Round(pos.y), Mathf.Round(Position.z)), TileType.Generator);
+                    tb.ResetTile(false);
                 }
             }
         }
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+            Application.Quit();
+
         // Follow
-        transform.DOMove(Position, 0.25f);
+        transform.DOMove(new Vector3(Position.x, Position.y), 0.25f);
         if (Vector3.Distance(Position, Camera.main.transform.parent.transform.position) > Camera.main.orthographicSize - 2)
-            Camera.main.transform.parent.DOMove(Position, 0.75f);
+            Camera.main.transform.parent.DOMove(new Vector3(Position.x, Position.y), 0.75f);
     }
     RaycastHit2D[] hit = new RaycastHit2D[1];
 }

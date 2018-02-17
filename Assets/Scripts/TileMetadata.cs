@@ -1,9 +1,13 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class TileMetadata : ScriptableObject { }
-
-public class PowerSource : TileMetadata
+public abstract class TileMetadata // : ScriptableObject { }
 {
-    public readonly bool Powered = true;
+    public readonly Vector3Int Location;
+
+    public TileMetadata(Vector3Int location)
+    {
+        Location = location;
+        World.SetSpecial(Location, this);
+    }
 }

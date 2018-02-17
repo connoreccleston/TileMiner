@@ -21,15 +21,15 @@ MonoBehaviour:
     nonColliding: 1
   - displayName: Dirt
     type: 1
-    sprite: {fileID: 21300004, guid: 21a59a02bf5856440a424de8ed172f91, type: 3}
-    hardness: 1
+    sprite: {fileID: 21300000, guid: 710df01af1a2a9249b93425a9928a355, type: 3}
+    hardness: 0
     behaviour: 
     transparent: 0
     nonColliding: 0
   - displayName: Stone
     type: 2
-    sprite: {fileID: 21300002, guid: 21a59a02bf5856440a424de8ed172f91, type: 3}
-    hardness: 1
+    sprite: {fileID: 21300000, guid: 95396c77a70eac44894bcfed5c35680b, type: 3}
+    hardness: 0
     behaviour: 
     transparent: 0
     nonColliding: 0
@@ -42,8 +42,8 @@ MonoBehaviour:
     nonColliding: 1
   - displayName: Generator
     type: 4
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: d4f5aa3786979bc4898db9554b3a6c0e, type: 3}
     hardness: -1
-    behaviour: 
+    behaviour: PowerSourceBehaviour
     transparent: 0
     nonColliding: 0

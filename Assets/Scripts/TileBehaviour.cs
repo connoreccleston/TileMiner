@@ -103,7 +103,10 @@ public class TileBehaviour : MonoBehaviour
     {
         if (doUpdate)
         {
-            Debug.Log("special behaviour " + Data.Behaviour);
+            foreach (Transform child in transform)
+                Destroy(child.gameObject);
+
+            //Debug.Log("special behaviour " + Data.Behaviour);
             if (!string.IsNullOrEmpty(Data.Behaviour))
             {
                 gameObject.AddComponent(System.Type.GetType(Data.Behaviour));

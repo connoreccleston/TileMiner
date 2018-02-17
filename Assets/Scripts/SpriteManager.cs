@@ -53,6 +53,9 @@ public class SpriteManager : MonoBehaviour
 
             foreach (var tile in toDestroy)
             {
+                //foreach (Transform child in tile.transform)
+                //    Destroy(child.gameObject);
+
                 if (!Seen.Contains(tile.gameObject))
                 {
                     Recycle.Push(tile.gameObject);
