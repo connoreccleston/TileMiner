@@ -110,7 +110,7 @@ public static class World
         int y = (int)Position.y;
         int z = (int)Position.z;
 
-        Debug.Log(x + " " + y + " " + z);
+        //Debug.Log(x + " " + y + " " + z);
 
         if (!InBounds(x, y, z))
             return false;

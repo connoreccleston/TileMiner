@@ -40,7 +40,7 @@ public class TileBehaviour : MonoBehaviour
         Vector3 position = new Vector3(transform.position.x, transform.position.y, PlayerController.Position.z);
         //Debug.Log(position);
         int depth;
-        Data = TileData.Find(World.GetTileType(position, out depth));
+        Data = TileData[World.GetTileType(position, out depth)];
         Depth = depth;
 
         //if (depth != 0)
@@ -51,7 +51,7 @@ public class TileBehaviour : MonoBehaviour
         //}
 
         ChangeSprite(Depth, animate);
-        name = Data.Type.ToString();
+        name = Data.Name;
         ResetDamage();
     }
 
@@ -103,9 +103,9 @@ public class TileBehaviour : MonoBehaviour
     {
         if (doUpdate)
         {
+            Debug.Log("special behaviour " + Data.Behaviour);
             if (!string.IsNullOrEmpty(Data.Behaviour))
             {
-                Debug.Log(Data.Behaviour);
                 gameObject.AddComponent(System.Type.GetType(Data.Behaviour));
             }
             SR.sprite = Data.Sprite;

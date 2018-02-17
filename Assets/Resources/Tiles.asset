@@ -12,27 +12,38 @@ MonoBehaviour:
   m_Name: Tiles
   m_EditorClassIdentifier: 
   Tiles:
-  - Type: 0
-    Sprite: {fileID: 0}
-    Hardness: -1
-    Behaviour: 
-    Transparent: 1
-    NonColliding: 1
-  - Type: 1
-    Sprite: {fileID: 21300004, guid: 21a59a02bf5856440a424de8ed172f91, type: 3}
-    Hardness: 0
-    Behaviour: 
-    Transparent: 0
-    NonColliding: 0
-  - Type: 2
-    Sprite: {fileID: 21300002, guid: 21a59a02bf5856440a424de8ed172f91, type: 3}
-    Hardness: 0
-    Behaviour: 
-    Transparent: 0
-    NonColliding: 0
-  - Type: 3
-    Sprite: {fileID: 0}
-    Hardness: -1
-    Behaviour: PylonBehaviour
-    Transparent: 1
-    NonColliding: 1
+  - displayName: Air
+    type: 0
+    sprite: {fileID: 0}
+    hardness: -1
+    behaviour: 
+    transparent: 1
+    nonColliding: 1
+  - displayName: Dirt
+    type: 1
+    sprite: {fileID: 21300004, guid: 21a59a02bf5856440a424de8ed172f91, type: 3}
+    hardness: 1
+    behaviour: 
+    transparent: 0
+    nonColliding: 0
+  - displayName: Stone
+    type: 2
+    sprite: {fileID: 21300002, guid: 21a59a02bf5856440a424de8ed172f91, type: 3}
+    hardness: 1
+    behaviour: 
+    transparent: 0
+    nonColliding: 0
+  - displayName: Pylon
+    type: 3
+    sprite: {fileID: 0}
+    hardness: -1
+    behaviour: PylonBehaviour
+    transparent: 1
+    nonColliding: 1
+  - displayName: Generator
+    type: 4
+    sprite: {fileID: 0}
+    hardness: -1
+    behaviour: 
+    transparent: 0
+    nonColliding: 0
