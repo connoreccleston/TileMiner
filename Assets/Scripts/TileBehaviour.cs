@@ -19,17 +19,19 @@ public class TileBehaviour : MonoBehaviour
     public const float AnimTime = 1.5f;
 
     private static TileData TileData;
+    private static GameObject LRContainer;
     private void Awake()
     {
-        if (TileData == null)
-            TileData = Resources.Load<TileData>("Tiles");
+        Utility.Load(ref TileData, "Tiles");
+        Utility.Find(ref LRContainer, "LineRendererContainer");
     }
 
     private void Start()
 	{
         LastPosition = transform.position;
         SR = gameObject.AddComponent<SpriteRenderer>();
-        BC= gameObject.AddComponent<BoxCollider2D>();
+        SR.sortingLayerName = "Tiles";
+        BC = gameObject.AddComponent<BoxCollider2D>();
         BC.size = new Vector2(1, 1);
         ResetTile(false);
     }
@@ -57,6 +59,9 @@ public class TileBehaviour : MonoBehaviour
 
     public static void ResetAll()
     {
+        foreach (Transform child in LRContainer.transform)
+            Destroy(child.gameObject);
+
         TileBehaviour[] allTiles = FindObjectsOfType<TileBehaviour>();
         float[] delays = new float[allTiles.Length];
 
