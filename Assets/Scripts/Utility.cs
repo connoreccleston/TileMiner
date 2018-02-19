@@ -19,4 +19,12 @@ public static class Utility
     {
         return Mathf.Abs(a.x - b.x) + Mathf.Abs(a.y - b.y) + Mathf.Abs(a.z - b.z);
     }
+
+    public static void Print<T>(params T[] toPrint)
+    {
+        string line = "";
+        foreach (T item in toPrint)
+            line += item.ToString() + "\t";
+        Debug.Log(line);
+    }
 }

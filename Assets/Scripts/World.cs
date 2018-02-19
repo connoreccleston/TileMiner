@@ -5,7 +5,7 @@ public static class World
 {
     public const int Size = 100;
     private static TileType[,,] Map = new TileType[Size, Size, Size];
-    private static Dictionary<Vector3Int, TileMetadata> Special = new Dictionary<Vector3Int, TileMetadata>();
+    private static Dictionary<Vector3Int, PersistentData> Special = new Dictionary<Vector3Int, PersistentData>();
 
     static World()
 	{
@@ -21,12 +21,12 @@ public static class World
         return !(x < 0 || y < 0 || z < 0 || x >= Size || y >= Size || z >= Size);
     }
 
-    public static TileMetadata GetSpecial(int x, int y, int z)
+    public static PersistentData GetSpecial(int x, int y, int z)
     {
         return GetSpecial(new Vector3Int(x, y, z));
     }
 
-    public static TileMetadata GetSpecial(Vector3Int location)
+    public static PersistentData GetSpecial(Vector3Int location)
     {
         if (Special.ContainsKey(location))
             return Special[location];
@@ -34,12 +34,12 @@ public static class World
         return null;
     }
 
-    public static void SetSpecial(int x, int y, int z, TileMetadata tmd)
+    public static void SetSpecial(int x, int y, int z, PersistentData tmd)
     {
         SetSpecial(new Vector3Int(x, y, z), tmd);
     }
 
-    public static void SetSpecial(Vector3Int location, TileMetadata tmd)
+    public static void SetSpecial(Vector3Int location, PersistentData tmd)
     {
         Special[location] = tmd;
     }

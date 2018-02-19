@@ -62,6 +62,9 @@ public class TileBehaviour : MonoBehaviour
         foreach (Transform child in LRContainer.transform)
             Destroy(child.gameObject);
 
+        foreach (SpecialBehaviour sb in FindObjectsOfType<SpecialBehaviour>())
+            Destroy(sb);
+
         TileBehaviour[] allTiles = FindObjectsOfType<TileBehaviour>();
         float[] delays = new float[allTiles.Length];
 
@@ -118,6 +121,8 @@ public class TileBehaviour : MonoBehaviour
             }
             SR.sprite = Data.Sprite;
             SR.color = NewColor;
+            SR.sortingLayerName = Depth > 0 ? "BGTiles" : "Tiles";
+            SR.gameObject.layer = Depth > 0 ? 0 : LayerMask.NameToLayer("Tiles");
 
             doUpdate = false;
         }

@@ -13,7 +13,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Tiles
   - 
   - 
   - 
@@ -38,8 +38,8 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
+  - name: BGTiles
+    uniqueID: 3220680699
     locked: 0
   - name: Tiles
     uniqueID: 1767489001
@@ -49,4 +49,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 2337393
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0

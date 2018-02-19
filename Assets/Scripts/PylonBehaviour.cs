@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class PylonBehaviour : MonoBehaviour
+public class PylonBehaviour : SpecialBehaviour
 {
     private SpriteRenderer SR;
     private PylonData PD;
@@ -100,7 +100,7 @@ public class PylonBehaviour : MonoBehaviour
     }
 }
 
-public class PylonData : TileMetadata
+public class PylonData : PersistentData
 {
     public bool Powered { get; private set; }
 
@@ -135,7 +135,7 @@ public class PylonData : TileMetadata
                     if (Vector3.Distance(Location, new Vector3(x, y, z)) > Radius)
                         continue;
 
-                    TileMetadata tile = World.GetSpecial(x, y, z);
+                    PersistentData tile = World.GetSpecial(x, y, z);
 
                     //if (tile != null)
                     //    Debug.Log(x + " " + y + " " + z + " " + tile);

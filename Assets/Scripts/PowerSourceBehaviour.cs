@@ -9,7 +9,7 @@ public class PowerSourceBehaviour : MonoBehaviour
     }
 }
 
-public class PowerSource : TileMetadata
+public class PowerSource : PersistentData
 {
     public readonly bool Powered = true;
 
