@@ -39,7 +39,7 @@ public class TileBehaviour : MonoBehaviour
     public void ResetTile(bool animate)
     {
         // needs to change based on direction
-        Vector3 position = new Vector3(transform.position.x, transform.position.y, PlayerController.Position.z);
+        Vector3 position = new Vector3(transform.position.x, transform.position.y, PlayerController.WorldPos.z);
         //Debug.Log(position);
         int depth;
         Data = TileData[World.GetTileType(position, out depth)];
@@ -177,7 +177,7 @@ public class TileBehaviour : MonoBehaviour
 
     private void Break()
     {
-        Vector3 position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, PlayerController.Position.z);
+        Vector3 position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, PlayerController.WorldPos.z);
         World.SetTileType(position + new Vector3(0, 0, Depth), TileType.Air);
         ResetTile(true);
     }

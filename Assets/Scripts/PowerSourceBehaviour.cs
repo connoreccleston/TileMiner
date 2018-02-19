@@ -5,7 +5,7 @@ public class PowerSourceBehaviour : MonoBehaviour
 {
 	private void Start()
 	{
-        new PowerSource(new Vector3Int((int)transform.position.x, (int)transform.position.y, (int)PlayerController.Position.z));
+        new PowerSource(new Vector3Int((int)transform.position.x, (int)transform.position.y, (int)PlayerController.WorldPos.z));
     }
 }
 

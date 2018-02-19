@@ -5,24 +5,39 @@ using DG.Tweening;
 
 public class PlayerController : MonoBehaviour
 {
+    public float CamSpeed = 10;
     public float ZoomSpeed = 250;
+    public float MoveSpeed = 25;
     public float MineSpeed = 1;
     public float MineRadius = 5;
 
     public static Direction Facing { get; private set; }
-    public static Vector3 Position { get; private set; }
+    public static Vector3 WorldPos { get; private set; }
 
     private void Start()
     {
         Facing = Direction.North;
-        Position = transform.position + new Vector3(0, 0, 2);
-        Camera.main.transform.parent.transform.position = Position;
-        World.SetTileType(Position, TileType.Air);
+        WorldPos = new Vector3(World.Size / 2, World.Size / 2, World.Size / 2);
+        transform.position = (Vector2)WorldPos;
+        Camera.main.transform.parent.transform.position = transform.position;
+        World.SetTileType(WorldPos, TileType.Air);
     }
 
     private void Update()
     {
-        Vector3 tempPos = Position;
+        MoveUpdate();
+
+        MouseUpdate();
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+            Application.Quit();
+
+        FollowUpdate();
+    }
+
+    private static void MoveUpdate()
+    {
+        Vector3 tempPos = WorldPos;
         bool dirtyWorld = false;
 
         Vector3 aVector, dVector, qVector, eVector;
@@ -78,8 +93,8 @@ public class PlayerController : MonoBehaviour
 
         int depth;
         bool freeSpace = World.GetTileType(tempPos, out depth) == TileType.Air || depth > 0;
-        if (freeSpace && tempPos != Position)
-            Position = tempPos;
+        if (freeSpace && tempPos != WorldPos)
+            WorldPos = tempPos;
         else
             dirtyWorld = false;
 
@@ -97,22 +112,30 @@ public class PlayerController : MonoBehaviour
 
         if (dirtyWorld)
             TileBehaviour.ResetAll();
+    }
 
-        Mouse();
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-            Application.Quit();
-
+    bool keepMoving;
+    private void FollowUpdate()
+    {
         // Follow
-        // Try doing these as lerp(currentPos, desiredPos, constant) or smoothdamp or movetowards
-        // Also change distance so it's closer to the edge
-        transform.DOMove(new Vector3(Position.x, Position.y), 0.25f);
-        if (Vector3.Distance(Position, Camera.main.transform.parent.transform.position) > Camera.main.orthographicSize - 2)
-            Camera.main.transform.parent.DOMove(new Vector3(Position.x, Position.y), 0.75f);
+        // LogicalPosition will have to change with direction
+        Vector3 vel = new Vector3();
+        transform.position = Vector3.SmoothDamp(transform.position, (Vector2)WorldPos, ref vel, 1 / MoveSpeed);
+
+        Transform camTrans = Camera.main.transform.parent.transform;
+        bool x = Mathf.Abs(transform.position.x - camTrans.position.x) > Camera.main.orthographicSize * Camera.main.aspect - 2;
+        bool y = Mathf.Abs(transform.position.y - camTrans.position.y) > Camera.main.orthographicSize - 2;
+        if (x || y || keepMoving)
+        {
+            keepMoving = true;
+            camTrans.position = Vector3.MoveTowards(camTrans.position, (Vector2)transform.position, CamSpeed * Time.deltaTime);
+        }
+        if (Vector3.Distance(transform.position, camTrans.position) == 0)
+            keepMoving = false;
     }
 
     RaycastHit2D[] hit = new RaycastHit2D[1];
-    private void Mouse()
+    private void MouseUpdate()
     {
         float size = Camera.main.orthographicSize - Input.GetAxis("Mouse ScrollWheel") * ZoomSpeed * Time.deltaTime;
         Camera.main.orthographicSize = Mathf.Clamp(size, 2, 16);
@@ -148,7 +171,7 @@ public class PlayerController : MonoBehaviour
             bool visible = Physics2D.LinecastNonAlloc(transform.position, pos, hit, LayerMask.GetMask("Tiles")) == 0;
             if (inRange && visible && tb.Depth > 0)
             {
-                World.SetTileType(new Vector3(Mathf.Round(pos.x), Mathf.Round(pos.y), Mathf.Round(Position.z)), type);
+                World.SetTileType(new Vector3(Mathf.Round(pos.x), Mathf.Round(pos.y), Mathf.Round(WorldPos.z)), type);
                 tb.ResetTile(false);
             }
         }

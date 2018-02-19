@@ -24,7 +24,7 @@ public class PylonBehaviour : SpecialBehaviour
 
     private void Start()
 	{
-        PD = new PylonData(new Vector3Int((int)transform.position.x, (int)transform.position.y, (int)PlayerController.Position.z), 5);
+        PD = new PylonData(new Vector3Int((int)transform.position.x, (int)transform.position.y, (int)PlayerController.WorldPos.z), 5);
 
         GameObject go = new GameObject("PylonSprite");
         go.transform.SetParent(transform, false);
