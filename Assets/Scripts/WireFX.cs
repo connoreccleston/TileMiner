@@ -3,12 +3,19 @@ using UnityEngine;
 
 public class WireFX : MonoBehaviour
 {
+    public float frequency = 0.4f;
+    private float offset;
+
     private LineRenderer LR;
 
     private Color StartColorSolid;
     private Color StartColorTrans;
     private Color EndColorSolid;
     private Color EndColorTrans;
+
+    private int Length;
+    private Vector3[] BasePositions;
+    private float xLen;
 
     private float Timer = -1;
     private bool CountDown;
@@ -18,12 +25,20 @@ public class WireFX : MonoBehaviour
 
     private void Start()
 	{
+        frequency += Random.Range(-0.1f, 0.1f);
+        offset = Random.value * 2 * Mathf.PI;
+
         LR = transform.GetComponent<LineRenderer>();
 
         StartColorSolid = LR.startColor;
         StartColorTrans = new Color(LR.startColor.r, LR.startColor.g, LR.startColor.b, 0);
         EndColorSolid = LR.endColor;
         EndColorTrans = new Color(LR.endColor.r, LR.endColor.g, LR.endColor.b, 0);
+
+        Length = LR.positionCount;
+        BasePositions = new Vector3[Length];
+        LR.GetPositions(BasePositions);
+        xLen = Mathf.Abs(BasePositions[0].x - BasePositions[Length - 1].x);
 
         FadeIn();
     }
@@ -75,5 +90,12 @@ public class WireFX : MonoBehaviour
         }
 
         // Make line sway by having each point move left and right based on index, middle being fastest and edges not at all.
+        for (int i = 1; i < Length - 1; i++)
+        {
+            //float magnitude = -1f * (2f / (Length - 1f)) * Mathf.Abs(i - (Length - 1f) / 2f) + 1f;
+            float magnitude = -1f * (2f / (Length - 1f)) * (2f / (Length - 1f)) * (i - (Length - 1f) / 2f) * (i - (Length - 1f) / 2f) + 1f;
+            float periodic = Mathf.Sin(frequency * Time.time - offset);
+            LR.SetPosition(i, BasePositions[i] + new Vector3(magnitude * periodic * xLen / Length, 0));
+        }
     }
 }

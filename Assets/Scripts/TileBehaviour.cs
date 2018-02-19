@@ -23,8 +23,8 @@ public class TileBehaviour : MonoBehaviour
     private static GameObject LRContainer;
     private void Awake()
     {
-        Utility.Load(ref TileData, "Tiles");
-        Utility.Find(ref LRContainer, "LineRendererContainer");
+        Util.Load(ref TileData, "Tiles");
+        Util.Find(ref LRContainer, "LineRendererContainer");
     }
 
     private void Start()

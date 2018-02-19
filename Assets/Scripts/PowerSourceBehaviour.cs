@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerSourceBehaviour : MonoBehaviour
+public class PowerSourceBehaviour : SpecialBehaviour
 {
 	private void Start()
 	{

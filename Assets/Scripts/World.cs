@@ -44,6 +44,11 @@ public static class World
         Special[location] = tmd;
     }
 
+    public static TileType GetTileType(Vector3Int Position)
+    {
+        return Map[Position.x, Position.y, Position.z];
+    }
+
     public static TileType GetTileType(Vector3 Position, out int Depth)
     {
         Depth = 0;

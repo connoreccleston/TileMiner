@@ -1,7 +1,6 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public static class Utility
+public static class Util
 {
     public static void Find(ref GameObject go, string name)
     {
@@ -13,6 +12,12 @@ public static class Utility
     {
         if (resource == null)
             resource = (T)(object)Resources.Load(path, typeof(T));
+    }
+
+    public static void LoadAll<T>(ref T[] resource, string path)
+    {
+        if (resource == null)
+            resource = System.Array.ConvertAll(Resources.LoadAll(path, typeof(T)), item => (T)(object)item);
     }
 
     public static float TaxiDistance(Vector3 a, Vector3 b)

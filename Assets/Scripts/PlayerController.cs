@@ -124,7 +124,7 @@ public class PlayerController : MonoBehaviour
         Transform camTrans = Camera.main.transform.parent.transform;
         bool x = Mathf.Abs(transform.position.x - camTrans.position.x) > Camera.main.orthographicSize * Camera.main.aspect - 2;
         bool y = Mathf.Abs(transform.position.y - camTrans.position.y) > Camera.main.orthographicSize - 2;
-        if (x || y || keepMoving)
+        if (x || y || keepMoving || Input.GetKeyDown(KeyCode.C))
         {
             keepMoving = true;
             camTrans.position = Vector3.MoveTowards(camTrans.position, (Vector2)transform.position, CamSpeed * Time.deltaTime);

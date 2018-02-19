@@ -12,11 +12,11 @@ public enum TileType : byte
 
 public class TileData : ScriptableObject
 {
-    private bool Initialized = false;
-    private int OldSize, EnumSize;
+    [SerializeField] private bool Initialized = false;
+    [SerializeField] private int OldSize;
+    [SerializeField] private int EnumSize;
 
-    [SerializeField]
-    private List<TileDatum> Tiles = new List<TileDatum>();
+    [SerializeField] private List<TileDatum> Tiles = new List<TileDatum>();
 
     public TileDatum this[TileType type]
     {

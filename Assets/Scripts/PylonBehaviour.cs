@@ -5,21 +5,22 @@ public class PylonBehaviour : SpecialBehaviour
 {
     private SpriteRenderer SR;
     private PylonData PD;
-    //private Rigidbody2D RB;
 
     private HashSet<PylonBehaviour> Attached = new HashSet<PylonBehaviour>();
     private HashSet<LineRenderer> Wires = new HashSet<LineRenderer>();
 
-    private static Sprite Inactive;
-    private static Sprite Active;
+    //private static Sprite[] Inactive;
+    //private static Sprite[] Active;
+    private static Sprite[] Sheet;
     private static GameObject Wire;
     private static GameObject Container;
     private void Awake()
     {
-        Utility.Load(ref Inactive, "Sprites/repeater");
-        Utility.Load(ref Active, "Sprites/repeater_on");
-        Utility.Load(ref Wire, "LineRenderer");
-        Utility.Find(ref Container, "LineRendererContainer");
+        //Utility.LoadAll(ref Inactive, "Sprites/pylon_off");
+        //Utility.LoadAll(ref Active, "Sprites/pylon_on");
+        Util.LoadAll(ref Sheet, "Sprites/pylon");
+        Util.Load(ref Wire, "LineRenderer");
+        Util.Find(ref Container, "LineRendererContainer");
     }
 
     private void Start()
@@ -29,15 +30,43 @@ public class PylonBehaviour : SpecialBehaviour
         GameObject go = new GameObject("PylonSprite");
         go.transform.SetParent(transform, false);
 
-        //RB = go.AddComponent<Rigidbody2D>();
-        //RB.bodyType = RigidbodyType2D.Static;
-
         SR = go.AddComponent<SpriteRenderer>();
-        SR.sprite = PD.Powered ? Active : Inactive;
+        SetSprite();
         SR.sortingLayerName = "TransTiles";
 
         GenerateWires();
 	}
+
+    // Will depend on facing
+    private void SetSprite()
+    {
+        int index = 0;
+
+        if (PD.SourceDir != Vector3Int.zero)
+        {
+            if (PD.SourceDir == new Vector3Int(0, 1, 0))
+                index = 2;
+            else if (PD.SourceDir == new Vector3Int(0, -1, 0))
+                index = 1;
+            else if (PD.SourceDir == new Vector3Int(-1, 0, 0))
+                index = 3;
+            else if (PD.SourceDir == new Vector3Int(1, 0, 0))
+                index = 4;
+        }
+        else
+        {
+            if (World.GetTileType(PD.Location + new Vector3Int(0, 1, 0)) != TileType.Air)
+                index = 2;
+            else if (World.GetTileType(PD.Location + new Vector3Int(0, -1, 0)) != TileType.Air)
+                index = 1;
+            else if (World.GetTileType(PD.Location + new Vector3Int(-1, 0, 0)) != TileType.Air)
+                index = 3;
+            else if (World.GetTileType(PD.Location + new Vector3Int(1, 0, 0)) != TileType.Air)
+                index = 4;
+        }
+
+        SR.sprite = PD.Powered ? Sheet[5 + index] : Sheet[index];
+    }
 
     private void GenerateWires()
     {
@@ -50,11 +79,8 @@ public class PylonBehaviour : SpecialBehaviour
             float distance = Vector3.Distance(transform.position, pb.transform.position);
             if (!Attached.Contains(pb) && distance <= Mathf.Min(PD.Radius, pb.PD.Radius))
             {
-                //WithPhysics(pb, distance);
-
                 LineRenderer lr = Instantiate(Wire, Container.transform).GetComponent<LineRenderer>();
                 Catenary.Generate(lr, transform.position, pb.transform.position, distance * distance / 3, distance / 9);
-                //lr.transform.GetComponent<WireFX>().FadeIn();
 
                 Attached.Add(pb);
                 pb.Attached.Add(this);
@@ -64,31 +90,12 @@ public class PylonBehaviour : SpecialBehaviour
         }
     }
 
-    //private void WithPhysics(PylonBehaviour pb, float distance)
-    //{
-    //    GameObject lastWire = Instantiate(Wire, transform);
-    //    lastWire.GetComponents<HingeJoint2D>()[0].connectedBody = RB;
-
-    //    for (int i = 1; i < distance + 5; i++)
-    //    {
-    //        GameObject wire = Instantiate(Wire, transform);
-    //        wire.GetComponents<HingeJoint2D>()[0].connectedBody = lastWire.GetComponent<Rigidbody2D>();
-    //        lastWire.GetComponents<HingeJoint2D>()[1].connectedBody = wire.GetComponent<Rigidbody2D>();
-    //        lastWire = wire;
-    //    }
-
-    //    GameObject wire2 = Instantiate(Wire, transform);
-    //    wire2.GetComponents<HingeJoint2D>()[0].connectedBody = lastWire.GetComponent<Rigidbody2D>();
-    //    lastWire.GetComponents<HingeJoint2D>()[1].connectedBody = wire2.GetComponent<Rigidbody2D>();
-    //    wire2.GetComponents<HingeJoint2D>()[1].connectedBody = pb.RB;
-    //}
-
     bool oldPowered;
     private void Update()
     {
         if (oldPowered != PD.Powered)
         {
-            SR.sprite = PD.Powered ? Active : Inactive;
+            SetSprite();
             oldPowered = PD.Powered;
         }
     }
@@ -98,19 +105,19 @@ public class PylonBehaviour : SpecialBehaviour
         foreach (LineRenderer lr in Wires)
             if (lr != null)
                 lr.transform.GetComponent<WireFX>().FadeOut(true);
-                //Destroy(lr.gameObject);
     }
 }
 
 public class PylonData : PersistentData
 {
     public bool Powered { get; private set; }
+    public Vector3Int SourceDir { get; private set; }
 
     //public readonly Vector3Int Location;
     public readonly int Radius;
 
     private List<PylonData> Attached = new List<PylonData>();
-    private List<PowerSource> Sources = new List<PowerSource>();
+    //private List<PowerSource> Sources = new List<PowerSource>();
 
     public PylonData(Vector3Int location, int radius) : base(location)
     {
@@ -149,17 +156,34 @@ public class PylonData : PersistentData
                         if (pd.Powered)
                             anyPowered = true;
                     }
-                    else
-                    {
-                        PowerSource ps = tile as PowerSource;
-                        if (ps != null)
-                        {
-                            Sources.Add(ps);
-                            if (ps.Powered)
-                                anyPowered = true;
-                        }
-                    }
+                    //else
+                    //{
+                    //    PowerSource ps = tile as PowerSource;
+                    //    if (ps != null)
+                    //    {
+                    //        Sources.Add(ps);
+                    //        if (ps.Powered)
+                    //            anyPowered = true;
+                    //    }
+                    //}
                 }
+            }
+        }
+
+        // turn into World function
+        Vector3Int[] Surrounding = new Vector3Int[]
+        {
+            new Vector3Int(1, 0, 0), new Vector3Int(0, 1, 0), new Vector3Int(0, 0, 1),
+            new Vector3Int(-1, 0, 0), new Vector3Int(0, -1, 0), new Vector3Int(0, 0, -1)
+        };
+        foreach (var item in Surrounding)
+        {
+            var data = World.GetSpecial(Location + item);
+            if (data != null && data.GetType() == typeof(PowerSource))
+            {
+                anyPowered = true;
+                SourceDir = item;
+                break;
             }
         }
 
@@ -186,4 +210,3 @@ public class PylonData : PersistentData
 
     //}
 }
-
