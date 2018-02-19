@@ -16,7 +16,8 @@ public class TileBehaviour : MonoBehaviour
     private BoxCollider2D BC;
 
     //public static int NumAnimating = 0;
-    public const float AnimTime = 1.5f;
+    public const float FlipAllTime = 1.5f;
+    public const float FlipOneTime = 1;
 
     private static TileData TileData;
     private static GameObject LRContainer;
@@ -52,6 +53,9 @@ public class TileBehaviour : MonoBehaviour
         //    Data.Sprite = temp;
         //}
 
+        foreach (SpecialBehaviour sb in transform.GetComponents<SpecialBehaviour>())
+            Destroy(sb);
+
         ChangeSprite(Depth, animate);
         name = Data.Name;
         ResetDamage();
@@ -59,11 +63,8 @@ public class TileBehaviour : MonoBehaviour
 
     public static void ResetAll()
     {
-        foreach (Transform child in LRContainer.transform)
-            Destroy(child.gameObject);
-
-        foreach (SpecialBehaviour sb in FindObjectsOfType<SpecialBehaviour>())
-            Destroy(sb);
+        //foreach (SpecialBehaviour sb in FindObjectsOfType<SpecialBehaviour>())
+        //    Destroy(sb);
 
         TileBehaviour[] allTiles = FindObjectsOfType<TileBehaviour>();
         float[] delays = new float[allTiles.Length];
@@ -81,7 +82,7 @@ public class TileBehaviour : MonoBehaviour
         }
 
         for (int i = 0; i < allTiles.Length; i++)
-            allTiles[i].Invoke("ResetTile", delays[i] / max * AnimTime);
+            allTiles[i].Invoke("ResetTile", delays[i] / max * FlipAllTime);
     }
     private void ResetTile()
     {
@@ -132,7 +133,7 @@ public class TileBehaviour : MonoBehaviour
     {
         if (Animating)
         {
-            transform.Rotate(Vector3.up * Time.deltaTime * 360);
+            transform.Rotate(Vector3.up * Time.deltaTime * 360 / FlipOneTime);
 
             if (transform.eulerAngles.y > 90)
             {

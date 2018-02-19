@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 233247760015016082}
   - component: {fileID: 233446668091737706}
   m_Layer: 0
-  m_Name: Wire
+  m_Name: PhysWire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

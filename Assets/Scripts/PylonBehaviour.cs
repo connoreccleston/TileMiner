@@ -54,6 +54,7 @@ public class PylonBehaviour : SpecialBehaviour
 
                 LineRenderer lr = Instantiate(Wire, Container.transform).GetComponent<LineRenderer>();
                 Catenary.Generate(lr, transform.position, pb.transform.position, distance * distance / 3, distance / 9);
+                //lr.transform.GetComponent<WireFX>().FadeIn();
 
                 Attached.Add(pb);
                 pb.Attached.Add(this);
@@ -96,7 +97,8 @@ public class PylonBehaviour : SpecialBehaviour
     {
         foreach (LineRenderer lr in Wires)
             if (lr != null)
-                Destroy(lr.gameObject);
+                lr.transform.GetComponent<WireFX>().FadeOut(true);
+                //Destroy(lr.gameObject);
     }
 }
 
