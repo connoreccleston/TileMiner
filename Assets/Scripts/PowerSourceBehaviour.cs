@@ -5,7 +5,9 @@ public class PowerSourceBehaviour : SpecialBehaviour
 {
 	private void Start()
 	{
-        new PowerSource(new Vector3Int((int)transform.position.x, (int)transform.position.y, (int)PlayerController.WorldPos.z));
+        //new PowerSource(new Vector3Int((int)transform.position.x, (int)transform.position.y, (int)PlayerController.WorldPos.z));
+        new PowerSource(WorldNew.Convert(transform.position));
+
     }
 }
 

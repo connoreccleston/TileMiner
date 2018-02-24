@@ -25,7 +25,9 @@ public class PylonBehaviour : SpecialBehaviour
 
     private void Start()
 	{
-        PD = new PylonData(new Vector3Int((int)transform.position.x, (int)transform.position.y, (int)PlayerController.WorldPos.z), 5);
+        //PD = new PylonData(new Vector3Int((int)transform.position.x, (int)transform.position.y, (int)PlayerController.WorldPos.z), 5);
+        PD = new PylonData(WorldNew.Convert(transform.position), 5);
+
 
         GameObject go = new GameObject("PylonSprite");
         go.transform.SetParent(transform, false);
@@ -55,13 +57,13 @@ public class PylonBehaviour : SpecialBehaviour
         }
         else
         {
-            if (World.GetTileType(PD.Location + new Vector3Int(0, 1, 0)) != TileType.Air)
+            if (WorldNew.GetTileType(PD.Location + new Vector3Int(0, 1, 0)) != TileType.Air)
                 index = 2;
-            else if (World.GetTileType(PD.Location + new Vector3Int(0, -1, 0)) != TileType.Air)
+            else if (WorldNew.GetTileType(PD.Location + new Vector3Int(0, -1, 0)) != TileType.Air)
                 index = 1;
-            else if (World.GetTileType(PD.Location + new Vector3Int(-1, 0, 0)) != TileType.Air)
+            else if (WorldNew.GetTileType(PD.Location + new Vector3Int(-1, 0, 0)) != TileType.Air)
                 index = 3;
-            else if (World.GetTileType(PD.Location + new Vector3Int(1, 0, 0)) != TileType.Air)
+            else if (WorldNew.GetTileType(PD.Location + new Vector3Int(1, 0, 0)) != TileType.Air)
                 index = 4;
         }
 
@@ -144,7 +146,7 @@ public class PylonData : PersistentData
                     if (Vector3.Distance(Location, new Vector3(x, y, z)) > Radius)
                         continue;
 
-                    PersistentData tile = World.GetSpecial(x, y, z);
+                    PersistentData tile = WorldNew.GetSpecial(x, y, z);
 
                     //if (tile != null)
                     //    Debug.Log(x + " " + y + " " + z + " " + tile);
@@ -178,7 +180,7 @@ public class PylonData : PersistentData
         };
         foreach (var item in Surrounding)
         {
-            var data = World.GetSpecial(Location + item);
+            var data = WorldNew.GetSpecial(Location + item);
             if (data != null && data.GetType() == typeof(PowerSource))
             {
                 anyPowered = true;

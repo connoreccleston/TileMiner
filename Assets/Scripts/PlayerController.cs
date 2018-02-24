@@ -10,16 +10,16 @@ public class PlayerController : MonoBehaviour
     public float MineSpeed = 1;
     public float MineRadius = 5;
 
-    public static Direction Facing { get; private set; }
-    public static Vector3 WorldPos { get; private set; }
+    //public static Direction Facing { get; private set; }
+    private static Vector3 TargetPos; //{ get; private set; }
 
     private void Start()
     {
-        Facing = Direction.North;
-        WorldPos = new Vector3(World.Size / 2, World.Size / 2, World.Size / 2);
-        transform.position = (Vector2)WorldPos;
+        //Facing = Direction.North;
+        //WorldPos = new Vector3(World.Size / 2, World.Size / 2, World.Size / 2);
+        transform.position = new Vector3(WorldNew.Origin.x, WorldNew.Origin.y); //(Vector2)WorldPos;
         Camera.main.transform.parent.transform.position = transform.position;
-        World.SetTileType(WorldPos, TileType.Air);
+        //World.SetTileType(WorldPos, TileType.Air);
     }
 
     private void Update()
@@ -34,41 +34,41 @@ public class PlayerController : MonoBehaviour
         FollowUpdate();
     }
 
-    private static void MoveUpdate()
+    private void MoveUpdate()
     {
-        Vector3 tempPos = WorldPos;
+        Vector3 tempPos = transform.position; //WorldPos;
         bool dirtyWorld = false;
 
-        Vector3 aVector, dVector, qVector, eVector;
-        aVector = dVector = qVector = eVector = new Vector3();
+        //Vector3 aVector, dVector, qVector, eVector;
+        //aVector = dVector = qVector = eVector = new Vector3();
 
-        switch (Facing)
-        {
-            case Direction.North:
-                aVector = Vector3.left;
-                dVector = Vector3.right;
-                qVector = Vector3.back;
-                eVector = Vector3.forward;
-                break;
-            case Direction.East:
-                aVector = Vector3.forward;
-                dVector = Vector3.back;
-                qVector = Vector3.left;
-                eVector = Vector3.right;
-                break;
-            case Direction.South:
-                aVector = Vector3.right;
-                dVector = Vector3.left;
-                qVector = Vector3.forward;
-                eVector = Vector3.back;
-                break;
-            case Direction.West:
-                aVector = Vector3.back;
-                dVector = Vector3.forward;
-                qVector = Vector3.right;
-                eVector = Vector3.left;
-                break;
-        }
+        //switch (Facing)
+        //{
+        //    case Direction.North:
+        //        aVector = Vector3.left;
+        //        dVector = Vector3.right;
+        //        qVector = Vector3.back;
+        //        eVector = Vector3.forward;
+        //        break;
+        //    case Direction.East:
+        //        aVector = Vector3.forward;
+        //        dVector = Vector3.back;
+        //        qVector = Vector3.left;
+        //        eVector = Vector3.right;
+        //        break;
+        //    case Direction.South:
+        //        aVector = Vector3.right;
+        //        dVector = Vector3.left;
+        //        qVector = Vector3.forward;
+        //        eVector = Vector3.back;
+        //        break;
+        //    case Direction.West:
+        //        aVector = Vector3.back;
+        //        dVector = Vector3.forward;
+        //        qVector = Vector3.right;
+        //        eVector = Vector3.left;
+        //        break;
+        //}
 
         // Movement
         if (Input.GetKeyDown(KeyCode.W))
@@ -76,24 +76,25 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.S))
             tempPos += Vector3.down;
         if (Input.GetKeyDown(KeyCode.A))
-            tempPos += aVector;
+            tempPos += Vector3.left; //aVector;
         if (Input.GetKeyDown(KeyCode.D))
-            tempPos += dVector;
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            tempPos += qVector;
-            dirtyWorld = true;
-        }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            tempPos += eVector;
-            dirtyWorld = true;
-        }
+            tempPos += Vector3.right; //dVector;
+        //if (Input.GetKeyDown(KeyCode.Q))
+        //{
+        //    tempPos += qVector;
+        //    dirtyWorld = true;
+        //}
+        //if (Input.GetKeyDown(KeyCode.E))
+        //{
+        //    tempPos += eVector;
+        //    dirtyWorld = true;
+        //}
 
+        Util.Load(ref TileData, "Tiles");
         int depth;
-        bool freeSpace = World.GetTileType(tempPos, out depth) == TileType.Air || depth > 0;
-        if (freeSpace && tempPos != WorldPos)
-            WorldPos = tempPos;
+        bool freeSpace = TileData[WorldNew.GetTileType(tempPos, out depth)].Sprite == null || depth > 0;
+        if (freeSpace && tempPos != TargetPos)
+            TargetPos = tempPos;
         else
             dirtyWorld = false;
 
@@ -112,6 +113,7 @@ public class PlayerController : MonoBehaviour
         if (dirtyWorld)
             TileBehaviour.ResetAll();
     }
+    TileData TileData;
 
     bool keepMoving;
     private void FollowUpdate()
@@ -119,7 +121,7 @@ public class PlayerController : MonoBehaviour
         // Follow
         // LogicalPosition will have to change with direction
         Vector3 vel = new Vector3();
-        transform.position = Vector3.SmoothDamp(transform.position, (Vector2)WorldPos, ref vel, 1 / MoveSpeed);
+        transform.position = Vector3.SmoothDamp(transform.position, (Vector2)TargetPos, ref vel, 1 / MoveSpeed);
 
         Transform camTrans = Camera.main.transform.parent.transform;
         bool x = Mathf.Abs(transform.position.x - camTrans.position.x) > Camera.main.orthographicSize * Camera.main.aspect - 2;
@@ -170,7 +172,8 @@ public class PlayerController : MonoBehaviour
             bool visible = Physics2D.LinecastNonAlloc(transform.position, pos, hit, LayerMask.GetMask("Tiles")) == 0;
             if (inRange && visible && tb.Depth > 0)
             {
-                World.SetTileType(new Vector3(Mathf.Round(pos.x), Mathf.Round(pos.y), Mathf.Round(WorldPos.z)), type);
+                WorldNew.SetTileType(pos, type);
+                //World.SetTileType(new Vector3(Mathf.Round(pos.x), Mathf.Round(pos.y), Mathf.Round(WorldPos.z)), type);
                 tb.ResetTile(false);
             }
         }

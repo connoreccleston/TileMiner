@@ -12,6 +12,6 @@ public abstract class PersistentData
     public PersistentData(Vector3Int location)
     {
         Location = location;
-        World.SetSpecial(Location, this);
+        WorldNew.SetSpecial(Location, this);
     }
 }

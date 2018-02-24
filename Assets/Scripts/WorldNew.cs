@@ -7,15 +7,37 @@ public static class WorldNew
     private static TileType[,,] Map = new TileType[Size, Size, Size];
     private static Dictionary<Vector3Int, PersistentData> Special = new Dictionary<Vector3Int, PersistentData>();
 
-    private static Vector3Int Origin = new Vector3Int(Size / 2, Size / 2, Size / 2);
+    public static Vector3Int Origin { get; private set; } //= new Vector3Int(Size / 2, Size / 2, Size / 2);
     private static Direction Direction = Direction.North;
 
     static WorldNew()
     {
+        Origin = new Vector3Int(Size / 2, Size / 2, Size / 2);
+
         for (int x = 0; x < Size; x++)
             for (int y = 0; y < Size; y++)
                 for (int z = 0; z < Size; z++)
                     Map[x, y, z] = (TileType)((x + y + z) % 2 + 1);
+    }
+
+    public static Vector3Int DepthVector
+    {
+        get
+        {
+            switch (Direction)
+            {
+                case Direction.North:
+                    return new Vector3Int(0, 0, 1);
+                case Direction.East:
+                    return new Vector3Int(1, 0, 0);
+                case Direction.South:
+                    return new Vector3Int(0, 0, -1);
+                case Direction.West:
+                    return new Vector3Int(-1, 0, 0);
+                default:
+                    return new Vector3Int();
+            }
+        }
     }
 
     public static void Turn(Vector2 position, bool left)
@@ -35,27 +57,32 @@ public static class WorldNew
 
     public static void Move(bool deeper)
     {
-        Vector3Int offset = new Vector3Int();
-        switch (Direction)
-        {
-            case Direction.North:
-                offset = new Vector3Int(0, 0, 1);
-                break;
-            case Direction.East:
-                offset = new Vector3Int(1, 0, 0);
-                break;
-            case Direction.South:
-                offset = new Vector3Int(0, 0, -1);
-                break;
-            case Direction.West:
-                offset = new Vector3Int(-1, 0, 0);
-                break;
-        }
+        //Vector3Int offset = new Vector3Int();
+        //switch (Direction)
+        //{
+        //    case Direction.North:
+        //        offset = new Vector3Int(0, 0, 1);
+        //        break;
+        //    case Direction.East:
+        //        offset = new Vector3Int(1, 0, 0);
+        //        break;
+        //    case Direction.South:
+        //        offset = new Vector3Int(0, 0, -1);
+        //        break;
+        //    case Direction.West:
+        //        offset = new Vector3Int(-1, 0, 0);
+        //        break;
+        //}
 
-        if (!deeper)
-            offset *= -1;
+        //if (!deeper)
+        //    offset *= -1;
 
-        Origin += offset;
+        //Origin += offset;
+
+        if (deeper)
+            Origin += DepthVector;
+        else
+            Origin -= DepthVector;
     }
 
     public static Vector3Int Convert(Vector2 position)
@@ -139,25 +166,25 @@ public static class WorldNew
 
         TileType type = GetTileType(pos);
 
-        Vector3Int offset = new Vector3Int();
-        switch (Direction)
-        {
-            case Direction.North:
-                offset = new Vector3Int(0, 0, 1);
-                break;
-            case Direction.East:
-                offset = new Vector3Int(1, 0, 0);
-                break;
-            case Direction.South:
-                offset = new Vector3Int(0, 0, -1);
-                break;
-            case Direction.West:
-                offset = new Vector3Int(-1, 0, 0);
-                break;
-        }
+        //Vector3Int offset = new Vector3Int();
+        //switch (Direction)
+        //{
+        //    case Direction.North:
+        //        offset = new Vector3Int(0, 0, 1);
+        //        break;
+        //    case Direction.East:
+        //        offset = new Vector3Int(1, 0, 0);
+        //        break;
+        //    case Direction.South:
+        //        offset = new Vector3Int(0, 0, -1);
+        //        break;
+        //    case Direction.West:
+        //        offset = new Vector3Int(-1, 0, 0);
+        //        break;
+        //}
 
         for (; TileData[type].Sprite == null; depth++)
-            type = GetTileType(pos += offset); // lol
+            type = GetTileType(pos += DepthVector);
 
         return type;
     }

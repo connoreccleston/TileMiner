@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public static class World
+public static class WorldOld
 {
     public const int Size = 100;
     private static TileType[,,] Map = new TileType[Size, Size, Size];
     private static Dictionary<Vector3Int, PersistentData> Special = new Dictionary<Vector3Int, PersistentData>();
 
-    static World()
+    static WorldOld()
 	{
 
         for (int x = 0; x < Size; x++)
@@ -56,25 +56,25 @@ public static class World
         int x = -1;
         int y = (int)Position.y;
         int z = -1;
-        switch (PlayerController.Facing)
-        {
-            case Direction.North: // World[x, y, Slice]                
-                x = (int)Position.x;
-                z = (int)Position.z;
-                break;
-            case Direction.East: // World[-Slice, y, x]
-                x = (int)-Position.z;
-                z = (int)Position.x;
-                break;
-            case Direction.South: // World[-x, y, -Slice]
-                x = (int)-Position.x;
-                z = (int)-Position.z;
-                break;
-            case Direction.West: // World[Slice, y, -x]
-                x = (int)Position.z;
-                z = (int)-Position.x;
-                break;
-        }
+        //switch (PlayerController.Facing)
+        //{
+        //    case Direction.North: // World[x, y, Slice]                
+        //        x = (int)Position.x;
+        //        z = (int)Position.z;
+        //        break;
+        //    case Direction.East: // World[-Slice, y, x]
+        //        x = (int)-Position.z;
+        //        z = (int)Position.x;
+        //        break;
+        //    case Direction.South: // World[-x, y, -Slice]
+        //        x = (int)-Position.x;
+        //        z = (int)-Position.z;
+        //        break;
+        //    case Direction.West: // World[Slice, y, -x]
+        //        x = (int)Position.z;
+        //        z = (int)-Position.x;
+        //        break;
+        //}
 
         if (!InBounds(x, y, z))
             return TileType.Air;
@@ -83,21 +83,21 @@ public static class World
 
         while (type == TileType.Air)
         {
-            switch (PlayerController.Facing)
-            {
-                case Direction.North:
-                    z++;
-                    break;
-                case Direction.East:
-                    x--;
-                    break;
-                case Direction.South:
-                    z--;
-                    break;
-                case Direction.West:
-                    x++;
-                    break;
-            }
+            //switch (PlayerController.Facing)
+            //{
+            //    case Direction.North:
+            //        z++;
+            //        break;
+            //    case Direction.East:
+            //        x--;
+            //        break;
+            //    case Direction.South:
+            //        z--;
+            //        break;
+            //    case Direction.West:
+            //        x++;
+            //        break;
+            //}
 
             if (!InBounds(x, y, z))
                 return TileType.Air;
@@ -120,21 +120,21 @@ public static class World
         if (!InBounds(x, y, z))
             return false;
 
-        switch (PlayerController.Facing)
-        {
-            case Direction.North:
-                Map[x, y, z] = Type;
-                break;
-            case Direction.East:
-                Map[-z, y, x] = Type;
-                break;
-            case Direction.South:
-                Map[-x, y, -z] = Type;
-                break;
-            case Direction.West:
-                Map[z, y, -x] = Type;
-                break;
-        }
+        //switch (PlayerController.Facing)
+        //{
+        //    case Direction.North:
+        //        Map[x, y, z] = Type;
+        //        break;
+        //    case Direction.East:
+        //        Map[-z, y, x] = Type;
+        //        break;
+        //    case Direction.South:
+        //        Map[-x, y, -z] = Type;
+        //        break;
+        //    case Direction.West:
+        //        Map[z, y, -x] = Type;
+        //        break;
+        //}
 
         return true;
     }
