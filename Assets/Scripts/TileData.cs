@@ -7,7 +7,8 @@ public enum TileType : byte
     Dirt,
     Stone,
     Pylon,
-    Generator
+    Generator,
+    Void
 }
 
 public class TileData : ScriptableObject
