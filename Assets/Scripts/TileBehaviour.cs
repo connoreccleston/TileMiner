@@ -3,6 +3,7 @@
 public class TileBehaviour : MonoBehaviour
 {
     private TileDatum Data;
+    private TileDatum TransData;
     private float Damage = 0;
     //private int Depth;
     public int Depth { get; private set; }
@@ -43,7 +44,9 @@ public class TileBehaviour : MonoBehaviour
         //Vector3 position = new Vector3(transform.position.x, transform.position.y, PlayerController.WorldPos.z);
         //Debug.Log(position);
         int depth;
-        Data = TileData[WorldNew.GetTileType(transform.position, out depth)];
+        TileType transType;
+        Data = TileData[WorldNew.GetTileType(transform.position, out depth, out transType)];
+        TransData = TileData[transType];
         Depth = depth;
 
         //if (depth != 0)
@@ -117,9 +120,10 @@ public class TileBehaviour : MonoBehaviour
 
             //Debug.Log("special behaviour " + Data.Behaviour);
             if (!string.IsNullOrEmpty(Data.Behaviour))
-            {
                 gameObject.AddComponent(System.Type.GetType(Data.Behaviour));
-            }
+            if (!string.IsNullOrEmpty(TransData.Behaviour))
+                gameObject.AddComponent(System.Type.GetType(TransData.Behaviour));
+
             SR.sprite = Data.Sprite;
             SR.color = NewColor;
             SR.sortingLayerName = Depth > 0 ? "BGTiles" : "Tiles";
@@ -179,8 +183,9 @@ public class TileBehaviour : MonoBehaviour
     private void Break()
     {
         //Vector3 position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, PlayerController.WorldPos.z);
-        Vector3 position = WorldNew.Convert(gameObject.transform.position);
-        WorldNew.SetTileType(position + new Vector3(0, 0, Depth), TileType.Air);
+        //Vector3 position = WorldNew.Convert(gameObject.transform.position);
+        //WorldNew.SetTileType(position + new Vector3Int(0, 0, Depth), TileType.Air);
+        WorldNew.SetTileType((WorldNew.Convert(transform.position) + WorldNew.DepthVector * Depth), TileType.Air);
         ResetTile(true);
     }
 }

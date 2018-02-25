@@ -21,13 +21,12 @@ public class PylonBehaviour : SpecialBehaviour
         Util.LoadAll(ref Sheet, "Sprites/pylon");
         Util.Load(ref Wire, "LineRenderer");
         Util.Find(ref Container, "LineRendererContainer");
+        PD = new PylonData(WorldNew.Convert(transform.position), 5);
     }
 
     private void Start()
 	{
         //PD = new PylonData(new Vector3Int((int)transform.position.x, (int)transform.position.y, (int)PlayerController.WorldPos.z), 5);
-        PD = new PylonData(WorldNew.Convert(transform.position), 5);
-
 
         GameObject go = new GameObject("PylonSprite");
         go.transform.SetParent(transform, false);

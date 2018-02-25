@@ -17,8 +17,9 @@ public class PlayerController : MonoBehaviour
     {
         //Facing = Direction.North;
         //WorldPos = new Vector3(World.Size / 2, World.Size / 2, World.Size / 2);
-        transform.position = new Vector3(WorldNew.Origin.x, WorldNew.Origin.y); //(Vector2)WorldPos;
+        transform.position = new Vector3(WorldNew.Origin.z, WorldNew.Origin.z); //(Vector2)WorldPos;
         Camera.main.transform.parent.transform.position = transform.position;
+        TargetPos = transform.position;
         //World.SetTileType(WorldPos, TileType.Air);
     }
 
@@ -36,84 +37,56 @@ public class PlayerController : MonoBehaviour
 
     private void MoveUpdate()
     {
-        Vector3 tempPos = transform.position; //WorldPos;
         bool dirtyWorld = false;
 
-        //Vector3 aVector, dVector, qVector, eVector;
-        //aVector = dVector = qVector = eVector = new Vector3();
-
-        //switch (Facing)
-        //{
-        //    case Direction.North:
-        //        aVector = Vector3.left;
-        //        dVector = Vector3.right;
-        //        qVector = Vector3.back;
-        //        eVector = Vector3.forward;
-        //        break;
-        //    case Direction.East:
-        //        aVector = Vector3.forward;
-        //        dVector = Vector3.back;
-        //        qVector = Vector3.left;
-        //        eVector = Vector3.right;
-        //        break;
-        //    case Direction.South:
-        //        aVector = Vector3.right;
-        //        dVector = Vector3.left;
-        //        qVector = Vector3.forward;
-        //        eVector = Vector3.back;
-        //        break;
-        //    case Direction.West:
-        //        aVector = Vector3.back;
-        //        dVector = Vector3.forward;
-        //        qVector = Vector3.right;
-        //        eVector = Vector3.left;
-        //        break;
-        //}
-
         // Movement
+        Vector3 offset = Vector3.zero;
         if (Input.GetKeyDown(KeyCode.W))
-            tempPos += Vector3.up;
+            offset = Vector3.up;
         if (Input.GetKeyDown(KeyCode.S))
-            tempPos += Vector3.down;
+            offset = Vector3.down;
         if (Input.GetKeyDown(KeyCode.A))
-            tempPos += Vector3.left; //aVector;
+            offset = Vector3.left;
         if (Input.GetKeyDown(KeyCode.D))
-            tempPos += Vector3.right; //dVector;
-        //if (Input.GetKeyDown(KeyCode.Q))
-        //{
-        //    tempPos += qVector;
-        //    dirtyWorld = true;
-        //}
-        //if (Input.GetKeyDown(KeyCode.E))
-        //{
-        //    tempPos += eVector;
-        //    dirtyWorld = true;
-        //}
+            offset = Vector3.right;
+        if (Input.GetKeyDown(KeyCode.Q))
+            dirtyWorld = WorldNew.Move(Vector2Int.RoundToInt(transform.position), false);
+        if (Input.GetKeyDown(KeyCode.E))
+            dirtyWorld = WorldNew.Move(Vector2Int.RoundToInt(transform.position), true);
 
-        Util.Load(ref TileData, "Tiles");
         int depth;
-        bool freeSpace = TileData[WorldNew.GetTileType(tempPos, out depth)].Sprite == null || depth > 0;
-        if (freeSpace && tempPos != TargetPos)
-            TargetPos = tempPos;
+        WorldNew.GetTileType(TargetPos + offset, out depth);
+        if (depth > 0)
+            TargetPos += offset;
         else
             dirtyWorld = false;
 
-        // Turning
+        //Util.Load(ref TileData, "Tiles");
+        //int depth;
+        //bool freeSpace = TileData[WorldNew.GetTileType(tempPos, out depth)].Sprite == null || depth > 0;
+        //if (freeSpace && tempPos != TargetPos)
+        //    TargetPos = tempPos;
+        //else
+        //    dirtyWorld = false;
+
+        ////Turning
         //if (Input.GetKeyDown(KeyCode.LeftArrow))
         //{
-        //    Facing = (Direction)(((int)Facing - 1 + 4) % 4);
+        //    //Facing = (Direction)(((int)Facing - 1 + 4) % 4);
+        //    WorldNew.Turn(Vector2Int.RoundToInt(transform.position), true);
         //    dirtyWorld = true;
         //}
         //if (Input.GetKeyDown(KeyCode.RightArrow))
         //{
-        //    Facing = (Direction)(((int)Facing + 1) % 4);
+        //    //Facing = (Direction)(((int)Facing + 1) % 4);
+        //    WorldNew.Turn(Vector2Int.RoundToInt(transform.position), false);
         //    dirtyWorld = true;
         //}
 
         if (dirtyWorld)
             TileBehaviour.ResetAll();
     }
-    TileData TileData;
+    //TileData TileData;
 
     bool keepMoving;
     private void FollowUpdate()
@@ -121,7 +94,7 @@ public class PlayerController : MonoBehaviour
         // Follow
         // LogicalPosition will have to change with direction
         Vector3 vel = new Vector3();
-        transform.position = Vector3.SmoothDamp(transform.position, (Vector2)TargetPos, ref vel, 1 / MoveSpeed);
+        transform.position = Vector3.SmoothDamp(transform.position, TargetPos, ref vel, 1 / MoveSpeed);
 
         Transform camTrans = Camera.main.transform.parent.transform;
         bool x = Mathf.Abs(transform.position.x - camTrans.position.x) > Camera.main.orthographicSize * Camera.main.aspect - 2;
@@ -143,12 +116,13 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetMouseButton(0))
         {
-            Vector3 pos = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            int numHits = Physics2D.LinecastNonAlloc(transform.position, pos, hit, LayerMask.GetMask("Tiles"));
+            Vector2 start = Vector2Int.RoundToInt(transform.position);
+            Vector2 end = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            int numHits = Physics2D.LinecastNonAlloc(start, end, hit, LayerMask.GetMask("Tiles"));
             if (numHits == 0)
-                numHits = Physics2D.LinecastNonAlloc(pos, pos, hit);
+                numHits = Physics2D.LinecastNonAlloc(end, end, hit);
             if (numHits != 0)
-                if (Vector3.Distance(transform.position, hit[0].transform.position) < MineRadius)
+                if (Vector2.Distance(start, hit[0].transform.position) < MineRadius)
                     hit[0].transform.GetComponent<TileBehaviour>().Mine(MineSpeed * Time.deltaTime);
         }
         else if (Input.GetMouseButtonDown(1))
@@ -163,27 +137,20 @@ public class PlayerController : MonoBehaviour
 
     private void PlaceTile(TileType type)
     {
-        Vector3 pos = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        int numHits = Physics2D.LinecastNonAlloc(pos, pos, hit);
+        Vector2 end = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        int numHits = Physics2D.LinecastNonAlloc(end, end, hit);
         if (numHits != 0)
         {
+            Vector2 start = Vector2Int.RoundToInt(transform.position);
             TileBehaviour tb = hit[0].transform.GetComponent<TileBehaviour>();
-            bool inRange = Vector3.Distance(transform.position, hit[0].transform.position) < MineRadius;
-            bool visible = Physics2D.LinecastNonAlloc(transform.position, pos, hit, LayerMask.GetMask("Tiles")) == 0;
-            if (inRange && visible && tb.Depth > 0)
+            bool inRange = Vector2.Distance(start, hit[0].transform.position) < MineRadius;
+            bool visible = Physics2D.LinecastNonAlloc(start, end, hit, LayerMask.GetMask("Tiles")) == 0;
+            if (inRange && visible && tb.Depth > 0 && Vector2Int.RoundToInt(end) != start)
             {
-                WorldNew.SetTileType(pos, type);
+                WorldNew.SetTileType(end, type);
                 //World.SetTileType(new Vector3(Mathf.Round(pos.x), Mathf.Round(pos.y), Mathf.Round(WorldPos.z)), type);
                 tb.ResetTile(false);
             }
         }
     }
-}
-
-public enum Direction
-{
-    North = 0,
-    East = 1,
-    South = 2,
-    West = 3
 }
